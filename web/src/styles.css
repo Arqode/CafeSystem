@@ -1,6 +1,5 @@
 :root{--bg:#eef3f8;--panel:#e8eff6;--card:#fff;--ink:#17202b;--mute:#667487;--line:#d5dee8;--brand:#14466e;--on:#fff;--bad:#b3261e;
 --new:#d9eddf;--new-t:#1d5a34;--prep:#fbeac4;--prep-t:#7a5206;--ready:#d6e6fb;--ready-t:#164a8a;--done:#e4e7eb;--done-t:#444}
-@media(prefers-color-scheme:dark){:root{--bg:#0e1620;--panel:#14202d;--card:#1b2a3a;--ink:#e9eef4;--mute:#97a6b8;--line:#2c3e52;--brand:#5aa6e0;--on:#08121c;--bad:#ff8a80;--new:#1d3a2a;--new-t:#9fe0b8;--prep:#443414;--prep-t:#f0cf85;--ready:#17304f;--ready-t:#a9cdf5;--done:#2a3441;--done-t:#bcc6d2}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 button,input,select{font:inherit;color:inherit}button{cursor:pointer}

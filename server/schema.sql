@@ -34,3 +34,4 @@ SELECT * FROM (VALUES
  ('Cheesecake','Desserts',1800,'Classic, berry sauce')
 ) AS v(name, category, price, description)
 WHERE NOT EXISTS (SELECT 1 FROM products);
+
