@@ -1,0 +1,104 @@
+{
+  "pageid": 105804754,
+  "ns": 6,
+  "title": "File:Fried chicken burger .jpg",
+  "imagerepository": "local",
+  "imageinfo": [
+    {
+      "size": 4553204,
+      "width": 4608,
+      "height": 3456,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Fried_chicken_burger_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Fried_chicken_burger_.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=105804754",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2021-05-24 04:51:58",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Fried chicken burger ",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "CC-Zero|Chicken sandwiches (burger-type)|Self-published work|Uploaded with Mobile/Android|Files with coordinates missing SDC location of creation|United States photographs taken on 2021-05-22",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "38.912457",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "-77.038538",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Topped with lettuce, tomato, onion, Swiss cheese, and bacon",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "22 May 2021 (according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Kurt_Kaiser&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Kurt Kaiser (page does not exist)\">Kurt Kaiser</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Zero, Public Domain Dedication",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  ]
+}

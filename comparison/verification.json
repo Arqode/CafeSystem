@@ -1,0 +1,70 @@
+{
+  "browser": "155.0.8059.86",
+  "viewport": "360 × 800; DPR 1 (DPR 2 separately checked)",
+  "mode": "production, demo, isolated browser contexts",
+  "checks": [
+    "Baseline production menu opens in demo mode without image assets",
+    "Burgers: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Burgers, zero detected violations",
+    "Drinks: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Drinks, zero detected violations",
+    "Desserts: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Desserts, zero detected violations",
+    "Eight WebP photos decode; correct 400w selection at 360 px / DPR 1; descriptive alt; original text brand restored; no audio/video",
+    "Cart: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Cart, zero detected violations",
+    "Search, empty search, repeated add, quantities, remove, totals, checkout, cart clearing, and order persistence after reload",
+    "Customer orders: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Customer orders, zero detected violations",
+    "Staff orders: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Staff orders, zero detected violations",
+    "Staff demo login and New → Preparing → Ready → Completed; customer sees updated status",
+    "Manage menu: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Manage menu, zero detected violations",
+    "Menu edit, disable/enable, custom product fallback, and checkout for a newly created product",
+    "CSS feedback animation exists and is disabled by reduced-motion preference",
+    "740w user photo selection at DPR 2 without upscaling and keyboard Tab/Enter navigation",
+    "API, storage, product/order types, checkout, and staff/order page source files are byte-identical to baseline",
+    "No uncaught page errors or HTTP responses >= 400 during the checked flows",
+    "Image credits: no document overflow at 360 px",
+    "axe WCAG A/AA scan: Image credits, zero detected violations",
+    "Local credits page opens, lists all eight photo sources, and fits 360 px"
+  ],
+  "axe": [
+    {
+      "label": "Burgers",
+      "violations": []
+    },
+    {
+      "label": "Drinks",
+      "violations": []
+    },
+    {
+      "label": "Desserts",
+      "violations": []
+    },
+    {
+      "label": "Cart",
+      "violations": []
+    },
+    {
+      "label": "Customer orders",
+      "violations": []
+    },
+    {
+      "label": "Staff orders",
+      "violations": []
+    },
+    {
+      "label": "Manage menu",
+      "violations": []
+    },
+    {
+      "label": "Image credits",
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "brokenResponses": [],
+  "performanceMeasurement": "Not performed; no DevTools Network measurements are reported."
+}

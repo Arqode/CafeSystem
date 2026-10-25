@@ -1,0 +1,91 @@
+{
+  "pageid": 115359486,
+  "ns": 6,
+  "title": "File:New York cheesecake 3.jpg",
+  "imagerepository": "local",
+  "imageinfo": [
+    {
+      "size": 2225053,
+      "width": 3120,
+      "height": 3120,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/New_York_cheesecake_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:New_York_cheesecake_3.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=115359486",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2022-02-18 20:41:23",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "New York cheesecake 3",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "CC-Zero|New York-style cheesecake|Self-published work|Uploaded with Mobile/Android|Photographs taken on 2021-12-13",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "New York cheesecake.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "13 December 2021 (according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Muago&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Muago (page does not exist)\">Muago</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Zero, Public Domain Dedication",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  ]
+}

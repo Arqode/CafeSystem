@@ -1,0 +1,10 @@
+{
+  "name": "my-cafe-part-b-checks",
+  "private": true,
+  "type": "module",
+  "scripts": { "check": "node verify.mjs", "audit:b3": "node audit-b3.mjs" },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "playwright": "1.56.1"
+  }
+}

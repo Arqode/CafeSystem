@@ -1,0 +1,1550 @@
+{
+  "browser": "155.0.8059.86",
+  "environment": "Production demo on port 4174; isolated temporary context; viewport 360×800 and 1280×900",
+  "sourceFilesScanned": [
+    "web/src/api.ts",
+    "web/src/App.tsx",
+    "web/src/components.tsx",
+    "web/src/main.tsx",
+    "web/src/media.tsx",
+    "web/src/pages/AdminOrdersPage.tsx",
+    "web/src/pages/CartPage.tsx",
+    "web/src/pages/ManageMenuPage.tsx",
+    "web/src/pages/MenuPage.tsx",
+    "web/src/pages/MyOrdersPage.tsx",
+    "web/src/store.tsx",
+    "web/src/styles.css",
+    "web/src/types.ts",
+    "web/src/vite-env.d.ts",
+    "web/index.html",
+    "web/public/media/cafe-logo.svg",
+    "web/public/media/cart-icon.svg",
+    "web/public/media/credits.html"
+  ],
+  "playbackMatches": [],
+  "mediaRequests": [],
+  "pageErrors": [],
+  "summary": {
+    "states": 27,
+    "meaningfulPhotoSources": [
+      "http://127.0.0.1:4174/media/cheeseburger-400.webp",
+      "http://127.0.0.1:4174/media/chicken-burger-400.webp",
+      "http://127.0.0.1:4174/media/double-burger-400.webp",
+      "http://127.0.0.1:4174/media/cola-400.webp",
+      "http://127.0.0.1:4174/media/lemonade-400.webp",
+      "http://127.0.0.1:4174/media/americano-400.webp",
+      "http://127.0.0.1:4174/media/cheesecake-400.webp",
+      "http://127.0.0.1:4174/media/brownie-400.webp",
+      "http://127.0.0.1:4174/media/cheeseburger-740.webp",
+      "http://127.0.0.1:4174/media/chicken-burger-800.webp",
+      "http://127.0.0.1:4174/media/double-burger-800.webp"
+    ],
+    "imageErrors": [],
+    "overlaps": [],
+    "decorativeAppearances": 1,
+    "audioVideoElements": [],
+    "playbackCalls": [],
+    "cssImageBackgrounds": [],
+    "violations": [
+      {
+        "state": "360 px inactive product: Edit and Enable remain active",
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8e9aa8",
+                  "bgColor": "#f6f9fb",
+                  "contrastRatio": 2.7,
+                  "fontSize": "10.6pt (14.08px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"card off\">",
+                    "target": [
+                      ".off"
+                    ]
+                  },
+                  {
+                    "html": "<div class=\"panel\">",
+                    "target": [
+                      ".panel"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 2.7 (foreground color: #8e9aa8, background color: #f6f9fb, font size: 10.6pt (14.08px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"sub\">Burgers · Disabled — hidden from customers</p>",
+            "target": [
+              ".off > .sub"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.7 (foreground color: #8e9aa8, background color: #f6f9fb, font size: 10.6pt (14.08px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#698aa4",
+                  "bgColor": "#f6f9fb",
+                  "contrastRatio": 3.44,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"card off\">",
+                    "target": [
+                      ".off"
+                    ]
+                  },
+                  {
+                    "html": "<div class=\"panel\">",
+                    "target": [
+                      ".panel"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<button class=\"btn line sm\">Edit</button>",
+            "target": [
+              ".off > .actions > .line.btn.sm:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#698aa4",
+                  "bgColor": "#f6f9fb",
+                  "contrastRatio": 3.44,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"card off\">",
+                    "target": [
+                      ".off"
+                    ]
+                  },
+                  {
+                    "html": "<div class=\"panel\">",
+                    "target": [
+                      ".panel"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<button class=\"btn line sm\">Enable</button>",
+            "target": [
+              ".off > .actions > .line.btn.sm:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "state": "360 px cart feedback and decorative SVG",
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#fcfdfe",
+                  "bgColor": "#eef3f8",
+                  "contrastRatio": 1.09,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 1.09 (foreground color: #fcfdfe, background color: #eef3f8, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Cart · 1 item</small>",
+            "target": [
+              "small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #fcfdfe, background color: #eef3f8, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ]
+  },
+  "states": [
+    {
+      "label": "360 px menu: Burgers",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:4174/media/cheeseburger-400.webp",
+          "alt": "Example cheeseburger with cheese, lettuce and tomato on a white background",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/chicken-burger-400.webp",
+          "alt": "Example fried chicken burger in a bun",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/double-burger-400.webp",
+          "alt": "Example double cheeseburger with a grilled cheese bun",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        }
+      ],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        }
+      ],
+      "statusRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "text": ""
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px menu: Drinks",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:4174/media/cola-400.webp",
+          "alt": "Example glass of cola on a table beside flowers",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/lemonade-400.webp",
+          "alt": "Example pale lemonade served in a glass jar",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/americano-400.webp",
+          "alt": "Example black coffee in a white cup",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        }
+      ],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        }
+      ],
+      "statusRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "text": ""
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px menu: Desserts",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:4174/media/cheesecake-400.webp",
+          "alt": "Example New York cheesecake with a red fruit topping",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/brownie-400.webp",
+          "alt": "Example chocolate brownie",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        }
+      ],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        }
+      ],
+      "statusRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "text": ""
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px menu: empty search",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "text": ""
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px empty cart",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px empty customer orders",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px staff login",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px login error",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [
+        {
+          "role": "alert",
+          "live": null,
+          "text": "Wrong username or password."
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px new product form",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px product validation error",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [
+        {
+          "role": "alert",
+          "live": null,
+          "text": "Enter a product name."
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px edit product form",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px inactive product: Edit and Enable remain active",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "Burgers · Disabled — hidden from customers",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "0.6"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Edit",
+          "color": "rgb(20, 70, 110)",
+          "background": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": null
+        },
+        {
+          "text": "Enable",
+          "color": "rgb(20, 70, 110)",
+          "background": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": null
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#8e9aa8",
+                    "bgColor": "#f6f9fb",
+                    "contrastRatio": 2.7,
+                    "fontSize": "10.6pt (14.08px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"card off\">",
+                      "target": [
+                        ".off"
+                      ]
+                    },
+                    {
+                      "html": "<div class=\"panel\">",
+                      "target": [
+                        ".panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 2.7 (foreground color: #8e9aa8, background color: #f6f9fb, font size: 10.6pt (14.08px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"sub\">Burgers · Disabled — hidden from customers</p>",
+              "target": [
+                ".off > .sub"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.7 (foreground color: #8e9aa8, background color: #f6f9fb, font size: 10.6pt (14.08px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#698aa4",
+                    "bgColor": "#f6f9fb",
+                    "contrastRatio": 3.44,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"card off\">",
+                      "target": [
+                        ".off"
+                      ]
+                    },
+                    {
+                      "html": "<div class=\"panel\">",
+                      "target": [
+                        ".panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button class=\"btn line sm\">Edit</button>",
+              "target": [
+                ".off > .actions > .line.btn.sm:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#698aa4",
+                    "bgColor": "#f6f9fb",
+                    "contrastRatio": 3.44,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"card off\">",
+                      "target": [
+                        ".off"
+                      ]
+                    },
+                    {
+                      "html": "<div class=\"panel\">",
+                      "target": [
+                        ".panel"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button class=\"btn line sm\">Enable</button>",
+              "target": [
+                ".off > .actions > .line.btn.sm:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #698aa4, background color: #f6f9fb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "360 px cart feedback and decorative SVG",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:4174/media/cheeseburger-400.webp",
+          "alt": "Example cheeseburger with cheese, lettuce and tomato on a white background",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/chicken-burger-400.webp",
+          "alt": "Example fried chicken burger in a bun",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/double-burger-400.webp",
+          "alt": "Example double cheeseburger with a grilled cheese bun",
+          "complete": true,
+          "naturalWidth": 276,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/cart-icon.svg",
+          "alt": "",
+          "complete": true,
+          "naturalWidth": 24,
+          "decorative": true,
+          "parentButtonName": "View Cart",
+          "textBelowImage": null,
+          "captionStyle": null
+        }
+      ],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        }
+      ],
+      "statusRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "text": "Cheeseburger added to cart."
+        }
+      ],
+      "axeViolations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#fcfdfe",
+                    "bgColor": "#eef3f8",
+                    "contrastRatio": 1.09,
+                    "fontSize": "10.0pt (13.3333px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<body>",
+                      "target": [
+                        "body"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 1.09 (foreground color: #fcfdfe, background color: #eef3f8, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<small>Cart · 1 item</small>",
+              "target": [
+                "small"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #fcfdfe, background color: #eef3f8, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "360 px populated cart",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [
+        {
+          "role": null,
+          "live": "polite",
+          "text": "1"
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px customer orders: all five status labels",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "CANCELLED",
+          "color": "rgb(68, 68, 68)",
+          "background": "rgb(228, 231, 235)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 7.851549457621437
+        },
+        {
+          "text": "COMPLETED",
+          "color": "rgb(68, 68, 68)",
+          "background": "rgb(228, 231, 235)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 7.851549457621437
+        },
+        {
+          "text": "READY",
+          "color": "rgb(22, 74, 138)",
+          "background": "rgb(214, 230, 251)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.960769541519772
+        },
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        },
+        {
+          "text": "NEW",
+          "color": "rgb(29, 90, 52)",
+          "background": "rgb(217, 237, 223)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.680028183561184
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px staff orders: All",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "READY",
+          "color": "rgb(22, 74, 138)",
+          "background": "rgb(214, 230, 251)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.960769541519772
+        },
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        },
+        {
+          "text": "NEW",
+          "color": "rgb(29, 90, 52)",
+          "background": "rgb(217, 237, 223)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.680028183561184
+        },
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px staff orders: New",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "NEW",
+          "color": "rgb(29, 90, 52)",
+          "background": "rgb(217, 237, 223)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.680028183561184
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px staff orders: Preparing",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        },
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px staff orders: Ready",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "READY",
+          "color": "rgb(22, 74, 138)",
+          "background": "rgb(214, 230, 251)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.960769541519772
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px staff orders: Completed",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "COMPLETED",
+          "color": "rgb(68, 68, 68)",
+          "background": "rgb(228, 231, 235)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 7.851549457621437
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "1280 px Menu",
+      "viewport": {
+        "width": 1280,
+        "documentWidth": 1280
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:4174/media/cheeseburger-740.webp",
+          "alt": "Example cheeseburger with cheese, lettuce and tomato on a white background",
+          "complete": true,
+          "naturalWidth": 428,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/chicken-burger-800.webp",
+          "alt": "Example fried chicken burger in a bun",
+          "complete": true,
+          "naturalWidth": 428,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        },
+        {
+          "src": "http://127.0.0.1:4174/media/double-burger-800.webp",
+          "alt": "Example double cheeseburger with a grilled cheese bun",
+          "complete": true,
+          "naturalWidth": 428,
+          "decorative": false,
+          "parentButtonName": null,
+          "textBelowImage": true,
+          "captionStyle": {
+            "color": "rgb(82, 97, 116)",
+            "background": "rgb(255, 255, 255)",
+            "opacity": "1"
+          }
+        }
+      ],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        },
+        {
+          "text": "Example photo · actual presentation may vary",
+          "color": "rgb(82, 97, 116)",
+          "background": "rgb(255, 255, 255)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.323708513479427
+        }
+      ],
+      "statusRegions": [
+        {
+          "role": "status",
+          "live": "polite",
+          "text": ""
+        }
+      ],
+      "axeViolations": []
+    },
+    {
+      "label": "1280 px Cart",
+      "viewport": {
+        "width": 1280,
+        "documentWidth": 1280
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "1280 px My orders",
+      "viewport": {
+        "width": 1280,
+        "documentWidth": 1280
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "CANCELLED",
+          "color": "rgb(68, 68, 68)",
+          "background": "rgb(228, 231, 235)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 7.851549457621437
+        },
+        {
+          "text": "COMPLETED",
+          "color": "rgb(68, 68, 68)",
+          "background": "rgb(228, 231, 235)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 7.851549457621437
+        },
+        {
+          "text": "READY",
+          "color": "rgb(22, 74, 138)",
+          "background": "rgb(214, 230, 251)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.960769541519772
+        },
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        },
+        {
+          "text": "NEW",
+          "color": "rgb(29, 90, 52)",
+          "background": "rgb(217, 237, 223)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.680028183561184
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "1280 px Orders (staff)",
+      "viewport": {
+        "width": 1280,
+        "documentWidth": 1280
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [
+        {
+          "text": "READY",
+          "color": "rgb(22, 74, 138)",
+          "background": "rgb(214, 230, 251)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.960769541519772
+        },
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        },
+        {
+          "text": "NEW",
+          "color": "rgb(29, 90, 52)",
+          "background": "rgb(217, 237, 223)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 6.680028183561184
+        },
+        {
+          "text": "PREPARING",
+          "color": "rgb(122, 82, 6)",
+          "background": "rgb(251, 234, 196)",
+          "opacity": "1",
+          "parent": {
+            "color": "rgb(23, 32, 43)",
+            "background": "rgba(0, 0, 0, 0)",
+            "opacity": "1"
+          },
+          "contrast": 5.81748980526731
+        }
+      ],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "1280 px Manage menu",
+      "viewport": {
+        "width": 1280,
+        "documentWidth": 1280
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "1280 px image credits",
+      "viewport": {
+        "width": 1280,
+        "documentWidth": 1280
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    },
+    {
+      "label": "360 px image credits",
+      "viewport": {
+        "width": 360,
+        "documentWidth": 360
+      },
+      "images": [],
+      "mediaElements": [],
+      "mediaCalls": [],
+      "cssImageBackgrounds": [],
+      "colors": [],
+      "statusRegions": [],
+      "axeViolations": []
+    }
+  ]
+}

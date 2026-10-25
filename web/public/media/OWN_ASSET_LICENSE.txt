@@ -1,0 +1,10 @@
+The cafe-logo.svg and cart-icon.svg graphics were created specifically for MY CAFE in this task.
+No third-party graphic, font or icon was copied into it.
+These original graphics are dedicated to the public domain under CC0 1.0:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+This dedication applies only to these two SVG graphics. The cup logo is no longer
+used in the interface; the original text-only MY CAFE brand was restored.
+Photograph rights and sources
+are listed individually in credits.html and provenance.json. It does not
+change the licence of the existing application code.

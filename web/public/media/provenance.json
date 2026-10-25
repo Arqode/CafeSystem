@@ -1,0 +1,259 @@
+[
+  {
+    "slug": "cheeseburger",
+    "product": "Cheeseburger",
+    "source_title": "cheeseburger_hero (1).png",
+    "source_page": "",
+    "source_local": "фотки/cheeseburger_hero (1).png",
+    "download_url": "",
+    "author": "Not provided; file supplied by the user",
+    "license": "Not provided; no external licence or authorship claim is made",
+    "license_url": "",
+    "usage_terms": "User requested use in this prototype",
+    "original_dimensions": [
+      740,
+      740
+    ],
+    "original_bytes": 328756,
+    "original_sha256": "1a4ebf1dc41b585b5bd42761e7ccd891d5f9252bf998081fb6a0f2432ad402dd",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "cheeseburger-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 12992
+      },
+      {
+        "file": "cheeseburger-740.webp",
+        "width": 740,
+        "height": 462,
+        "bytes": 31210
+      }
+    ]
+  },
+  {
+    "slug": "chicken-burger",
+    "product": "Chicken Burger",
+    "source_title": "File:Fried chicken burger .jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Fried_chicken_burger_.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Fried_chicken_burger_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Kurt Kaiser",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+    "original_dimensions": [
+      4608,
+      3456
+    ],
+    "original_bytes": 4553204,
+    "original_sha256": "d16225e26a3ce23d4fe0bcfd9c36c701caa76bb205d9c5a8f59077cbc6b59d58",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "chicken-burger-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 11978
+      },
+      {
+        "file": "chicken-burger-800.webp",
+        "width": 800,
+        "height": 500,
+        "bytes": 30982
+      }
+    ]
+  },
+  {
+    "slug": "double-burger",
+    "product": "Double Burger",
+    "source_title": "File:Grilled Cheese Cheeseburger Double - Wendy's 2025-11-21.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Grilled_Cheese_Cheeseburger_Double_-_Wendy%27s_2025-11-21.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Grilled_Cheese_Cheeseburger_Double_-_Wendy%27s_2025-11-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Andy Li",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+    "original_dimensions": [
+      6144,
+      8160
+    ],
+    "original_bytes": 5948518,
+    "original_sha256": "bff15510379678fab33a7c46436a1a5c018f64b3959a737dabd87b290d76f39d",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "double-burger-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 12298
+      },
+      {
+        "file": "double-burger-800.webp",
+        "width": 800,
+        "height": 500,
+        "bytes": 29474
+      }
+    ]
+  },
+  {
+    "slug": "cola",
+    "product": "Cola",
+    "source_title": "File:Cola and flowers (Unsplash).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cola_and_flowers_(Unsplash).jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Cola_and_flowers_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Brooke Cagle brookecagle",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+    "original_dimensions": [
+      5201,
+      3467
+    ],
+    "original_bytes": 1797385,
+    "original_sha256": "636c448dc8817c58416ad10f0a30b0d382c23c9fcfac405aad696423d4dcd057",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "cola-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 12514
+      },
+      {
+        "file": "cola-800.webp",
+        "width": 800,
+        "height": 500,
+        "bytes": 37454
+      }
+    ]
+  },
+  {
+    "slug": "lemonade",
+    "product": "Lemonade",
+    "source_title": "File:Lemonade mason jar.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Lemonade_mason_jar.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Lemonade_mason_jar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Corn cheese",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+    "original_dimensions": [
+      2448,
+      3264
+    ],
+    "original_bytes": 1773636,
+    "original_sha256": "4f8e2d7825c28fe406ef1459fada5ca4260e766de03a7e19d8043d4ae8eaa19b",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "lemonade-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 2822
+      },
+      {
+        "file": "lemonade-800.webp",
+        "width": 800,
+        "height": 500,
+        "bytes": 7144
+      }
+    ]
+  },
+  {
+    "slug": "americano",
+    "product": "Americano",
+    "source_title": "File:White cup of black coffee.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:White_cup_of_black_coffee.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/White_cup_of_black_coffee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Jon-Isac Lindberg",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+    "original_dimensions": [
+      2344,
+      2382
+    ],
+    "original_bytes": 2111389,
+    "original_sha256": "137938c7687e98be4f80eed14024066b654d87e5af3a592b9249da5fbddbd014",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "americano-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 2532
+      },
+      {
+        "file": "americano-800.webp",
+        "width": 800,
+        "height": 500,
+        "bytes": 5918
+      }
+    ]
+  },
+  {
+    "slug": "cheesecake",
+    "product": "Cheesecake",
+    "source_title": "File:New York cheesecake 3.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:New_York_cheesecake_3.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/New_York_cheesecake_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Muago",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+    "original_dimensions": [
+      3120,
+      3120
+    ],
+    "original_bytes": 2225053,
+    "original_sha256": "53b41da1d34b3dd41919a49823af10459f452734fc126eace38f78b137c5f879",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "cheesecake-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 9696
+      },
+      {
+        "file": "cheesecake-800.webp",
+        "width": 800,
+        "height": 500,
+        "bytes": 23376
+      }
+    ]
+  },
+  {
+    "slug": "brownie",
+    "product": "Brownie",
+    "source_title": "File:Brownie (1).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Brownie_(1).jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Brownie_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Renee Comet (Photographer)",
+    "license": "Public domain",
+    "license_url": "",
+    "usage_terms": "Public domain",
+    "original_dimensions": [
+      2700,
+      1800
+    ],
+    "original_bytes": 1949021,
+    "original_sha256": "32618367050dbf1c07050100f55db093d78f56ec677ab7c10c475affe668828e",
+    "changes": "Centre crop to 8:5; resize; WebP quality 76; strip metadata.",
+    "variants": [
+      {
+        "file": "brownie-400.webp",
+        "width": 400,
+        "height": 250,
+        "bytes": 5994
+      },
+      {
+        "file": "brownie-800.webp",
+        "width": 800,
+        "height": 500,
+        "bytes": 20102
+      }
+    ]
+  }
+]

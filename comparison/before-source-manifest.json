@@ -1,0 +1,162 @@
+﻿[
+    {
+        "Path":  ".gitignore",
+        "SHA256":  "51B683467BAACE87247EFFED923B8AAECC559168BA0EFBB43FD4714A8DC19362",
+        "Bytes":  23
+    },
+    {
+        "Path":  "docker-compose.yml",
+        "SHA256":  "FB267D47E28D81D18D82AD1FB973E9D5D65C9E0AE79FD6DD5C13E87630209F71",
+        "Bytes":  599
+    },
+    {
+        "Path":  "package-lock.json",
+        "SHA256":  "3ECE619700392A5D8F381AC9B765B3A207B014223DD79105E4B87ED88B8A8228",
+        "Bytes":  83
+    },
+    {
+        "Path":  "README.md",
+        "SHA256":  "97BDE712419CAF5FC5EBCE50F0036FADB2B8AA6DBFDF5B82255267375F94A6C8",
+        "Bytes":  1697
+    },
+    {
+        "Path":  "server\\.env.example",
+        "SHA256":  "5EF6B6D1567E513B2A00F247C95CE32CA7A146AB7241C3E37A4A68ACBC1BA1C6",
+        "Bytes":  233
+    },
+    {
+        "Path":  "server\\Dockerfile",
+        "SHA256":  "7ACF3E7612F192D45C5751A6CC81B80DB94BF70E349AD20F66D8F1A299966BCA",
+        "Bytes":  166
+    },
+    {
+        "Path":  "server\\package-lock.json",
+        "SHA256":  "AAF2E590AD76AD383C2DD4CB4EFF324674BDA2A9454D10A82166CF2B01110ABE",
+        "Bytes":  64456
+    },
+    {
+        "Path":  "server\\package.json",
+        "SHA256":  "80DBDA1C1FF5E73C573E5F915FA8CF52E849EA8D07F3A942B31D2A7CEB0AEE90",
+        "Bytes":  548
+    },
+    {
+        "Path":  "server\\schema.sql",
+        "SHA256":  "3A074195E44098B531188685EE649A11FDC41E70134F818E947D7E432EFD7B3D",
+        "Bytes":  1359
+    },
+    {
+        "Path":  "server\\tsconfig.json",
+        "SHA256":  "8C175A2A2774E42B85873D53DD27319B84060BE9FAE68534F57191C825E4CADD",
+        "Bytes":  149
+    },
+    {
+        "Path":  "server\\src\\db.ts",
+        "SHA256":  "FD1F35A779C3E71096BEBA811F7DB4D6857D1BAA28A2763F1E1D781FB99DB88F",
+        "Bytes":  200
+    },
+    {
+        "Path":  "server\\src\\index.ts",
+        "SHA256":  "3609A90851ABA9BDD91ACCC42B5E876C3AEA3808ABD3664C9265CB8E83372BB4",
+        "Bytes":  6038
+    },
+    {
+        "Path":  "server\\src\\seed.ts",
+        "SHA256":  "7E9D0CE88FABD37DA89D52FC9C7D18717E15E90DFD89F5CBB806E217C3EA76DD",
+        "Bytes":  655
+    },
+    {
+        "Path":  "web\\.env.example",
+        "SHA256":  "8DA7BE7C09006B17D25B5C1B7D6EC1E60B3E968E04EDE50C0BB2F3696AC0A8A3",
+        "Bytes":  147
+    },
+    {
+        "Path":  "web\\index.html",
+        "SHA256":  "5D32B09BE1C2E1BDB3D394D92CC9AD46EC3CD3D8A7B7D4F7DD4C5DE73A10F338",
+        "Bytes":  269
+    },
+    {
+        "Path":  "web\\package-lock.json",
+        "SHA256":  "C814FFE7F69DEFF96A459F576493A3194D356536630DC772338B311823C16E20",
+        "Bytes":  59209
+    },
+    {
+        "Path":  "web\\package.json",
+        "SHA256":  "DBB0DD84B5F6B8976A4471CAF58D1EAB5B2445C3D6B6F830DBC2F453D5E059D4",
+        "Bytes":  351
+    },
+    {
+        "Path":  "web\\tsconfig.json",
+        "SHA256":  "10021DE08AB1C9C0249B66283A0D7B853B6829E700753EB89C7727230CDFDAC2",
+        "Bytes":  241
+    },
+    {
+        "Path":  "web\\vite.config.ts",
+        "SHA256":  "BD1027A805CF50B04E1B3D4782E86A43AF774101CD0C53322ED90671E419EB2D",
+        "Bytes":  127
+    },
+    {
+        "Path":  "web\\src\\api.ts",
+        "SHA256":  "311CD720E115DD08C63582EB4D2B8BB1740EC6F290FF711F8913EEA1F70C0056",
+        "Bytes":  5203
+    },
+    {
+        "Path":  "web\\src\\App.tsx",
+        "SHA256":  "E6812FF7894B08AF910ED480147C0661CFC90C4A2B06E61842A4B6BB2E8E53A0",
+        "Bytes":  2340
+    },
+    {
+        "Path":  "web\\src\\components.tsx",
+        "SHA256":  "0BCB84FDCAAF51C79310A5B1605113ABABBFAEB577333ED4CFEDB35724E514D6",
+        "Bytes":  2415
+    },
+    {
+        "Path":  "web\\src\\main.tsx",
+        "SHA256":  "DC59441697784F0D9598E0A6E96D2CDBB3E4DFE888593351A4AB93D187EF104D",
+        "Bytes":  335
+    },
+    {
+        "Path":  "web\\src\\store.tsx",
+        "SHA256":  "9939227A40E1998C55919F382E29C657382875EAB93861C1C6DC99933C95DDC0",
+        "Bytes":  2537
+    },
+    {
+        "Path":  "web\\src\\styles.css",
+        "SHA256":  "2D27CD3DFEE2D34628E69874B79B225D612378710951C4FEBE44B0BA61C3061B",
+        "Bytes":  4277
+    },
+    {
+        "Path":  "web\\src\\types.ts",
+        "SHA256":  "20C76EE3F7139D16E05ACFA2755D5809BB9A7676234183FC43D2FB6226C79906",
+        "Bytes":  553
+    },
+    {
+        "Path":  "web\\src\\vite-env.d.ts",
+        "SHA256":  "65996936FBB042915F7B74A200FCDDE7E410F32A669B1AB9597CFAA4B0FADDB5",
+        "Bytes":  38
+    },
+    {
+        "Path":  "web\\src\\pages\\AdminOrdersPage.tsx",
+        "SHA256":  "708C245B91321C70B90E108243BD1175205F22CF6559D87EF8560C14730BC7F6",
+        "Bytes":  2253
+    },
+    {
+        "Path":  "web\\src\\pages\\CartPage.tsx",
+        "SHA256":  "F85F3C86FEBCE41BB2F51218225C4100243EA8533D1DF2A526E96533AAF70BA9",
+        "Bytes":  2764
+    },
+    {
+        "Path":  "web\\src\\pages\\ManageMenuPage.tsx",
+        "SHA256":  "1BC99DA63D092E0E94C3790AB3100EFFFC41E080C399B8D2189DD46574CFBE26",
+        "Bytes":  3330
+    },
+    {
+        "Path":  "web\\src\\pages\\MenuPage.tsx",
+        "SHA256":  "EDBCB8667E77262BEC452C5ACB5665F455779B7EFA04FA14E42C7052885ACC76",
+        "Bytes":  2057
+    },
+    {
+        "Path":  "web\\src\\pages\\MyOrdersPage.tsx",
+        "SHA256":  "4AC71B33096E10326944A14D17CA5440CE5A1CA8013F7B33A3E34905166DAB8D",
+        "Bytes":  1033
+    }
+]

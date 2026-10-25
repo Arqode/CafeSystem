@@ -1,0 +1,182 @@
+{
+  "checks": [
+    {
+      "file": "cheeseburger-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 12992,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "cheeseburger-740.webp",
+      "dimensions": [
+        740,
+        462
+      ],
+      "bytes": 31210,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "chicken-burger-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 11978,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "chicken-burger-800.webp",
+      "dimensions": [
+        800,
+        500
+      ],
+      "bytes": 30982,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "double-burger-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 12298,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "double-burger-800.webp",
+      "dimensions": [
+        800,
+        500
+      ],
+      "bytes": 29474,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "cola-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 12514,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "cola-800.webp",
+      "dimensions": [
+        800,
+        500
+      ],
+      "bytes": 37454,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "lemonade-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 2822,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "lemonade-800.webp",
+      "dimensions": [
+        800,
+        500
+      ],
+      "bytes": 7144,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "americano-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 2532,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "americano-800.webp",
+      "dimensions": [
+        800,
+        500
+      ],
+      "bytes": 5918,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "cheesecake-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 9696,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "cheesecake-800.webp",
+      "dimensions": [
+        800,
+        500
+      ],
+      "bytes": 23376,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "brownie-400.webp",
+      "dimensions": [
+        400,
+        250
+      ],
+      "bytes": 5994,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    },
+    {
+      "file": "brownie-800.webp",
+      "dimensions": [
+        800,
+        500
+      ],
+      "bytes": 20102,
+      "format": "WEBP",
+      "no_upscaling": true,
+      "no_exif": true
+    }
+  ],
+  "total_webp_bytes": 256486,
+  "note": "Actual local file checks only. Side-by-side source/output sheets support visual review; no Network performance was measured."
+}

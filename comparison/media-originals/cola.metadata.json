@@ -1,0 +1,91 @@
+{
+  "pageid": 61824024,
+  "ns": 6,
+  "title": "File:Cola and flowers (Unsplash).jpg",
+  "imagerepository": "local",
+  "imageinfo": [
+    {
+      "size": 1797385,
+      "width": 5201,
+      "height": 3467,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Cola_and_flowers_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cola_and_flowers_(Unsplash).jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61824024",
+      "extmetadata": {
+        "DateTime": {
+          "value": "2017-08-21 03:11:29",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Cola and flowers (Unsplash)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "CC-Zero|Cola drinks|Images uploaded by Fæ|Images from Unsplash|Images from Unsplash (review needed)",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Brooke Cagle 2017-06-01",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2017-06-01",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<p><a rel=\"nofollow\" class=\"external free\" href=\"https://unsplash.com/photos/McaNtoPEEcg\">https://unsplash.com/photos/McaNtoPEEcg</a>\n</p>\n<ul><li><bdi lang=\"en\" dir=\"ltr\" title=\"archived on 23 June 2017 at the Wayback Machine\"><a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20170623184052/https%3A//unsplash.com/photos/McaNtoPEEcg\">archive copy</a> at the <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Wayback_Machine\" class=\"extiw\" title=\"en:Wayback Machine\"><span lang=\"en\" dir=\"ltr\">Wayback Machine</span></a></span></bdi></li></ul>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Brooke Cagle <a rel=\"nofollow\" class=\"external text\" href=\"https://unsplash.com/@brookecagle\">brookecagle</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Zero, Public Domain Dedication",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      }
+    }
+  ]
+}
