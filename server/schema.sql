@@ -35,3 +35,14 @@ SELECT * FROM (VALUES
 ) AS v(name, category, price, description)
 WHERE NOT EXISTS (SELECT 1 FROM products);
 
+
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS is_demo BOOLEAN NOT NULL DEFAULT FALSE;
+CREATE INDEX IF NOT EXISTS order_items_order_id_idx ON order_items(order_id);
+CREATE INDEX IF NOT EXISTS orders_created_at_idx ON orders(created_at);
+INSERT INTO products(name,category,price,description)
+SELECT v.* FROM (VALUES
+ ('Double Burger','Burgers',3400,'Two juicy beef patties, cheddar and pickles'),
+ ('Americano','Drinks',1000,'Freshly brewed black coffee, 250 ml'),
+ ('Brownie','Desserts',1500,'Rich chocolate brownie with walnuts')
+) AS v(name,category,price,description)
+WHERE NOT EXISTS(SELECT 1 FROM products p WHERE p.name=v.name);

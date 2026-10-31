@@ -1,4 +1,6 @@
 import 'dotenv/config';
+import path from 'path';
+import fs from 'fs';
 import bcrypt from 'bcryptjs';
 import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
@@ -9,15 +11,21 @@ const SECRET = process.env.JWT_SECRET || '';
 if (SECRET.length < 16) throw new Error('JWT_SECRET must be set (min 16 characters)');
 
 const app = express();
-app.use(cors({ origin: process.env.CORS_ORIGIN || true }));
-app.use(express.json());
+app.disable('x-powered-by');
+app.set('trust proxy', process.env.TRUST_PROXY === '1' ? 1 : false);
+app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:5173' }));
+app.use((_req, res, next) => { res.setHeader('X-Content-Type-Options','nosniff'); res.setHeader('X-Frame-Options','DENY'); res.setHeader('Referrer-Policy','same-origin'); next(); });
+app.use(express.json({limit:'32kb'}));
+app.get('/api/health', wrapHealth);
+async function wrapHealth(_req:Request,res:Response) { try { await pool.query('SELECT 1'); res.json({ok:true,database:'connected'}); } catch { res.status(503).json({ok:false}); } }
 
 type Handler = (req: Request, res: Response) => Promise<unknown>;
 const wrap = (f: Handler) => (req: Request, res: Response, next: NextFunction) => { f(req, res).catch(next); };
 
 function requireAdmin(req: Request, res: Response, next: NextFunction) {
   try {
-    jwt.verify((req.headers.authorization || '').replace('Bearer ', ''), SECRET);
+    const claims = jwt.verify((req.headers.authorization || '').replace('Bearer ', ''), SECRET);
+    if (typeof claims === 'string' || claims.role !== 'admin') throw new Error('Unauthorized');
     next();
   } catch { res.status(401).json({ error: 'Unauthorized' }); }
 }
@@ -26,8 +34,16 @@ const CATS = ['Burgers', 'Drinks', 'Desserts'];
 const STATUSES = ['New', 'Preparing', 'Ready', 'Completed', 'Cancelled'];
 
 /* ---- auth ---- */
+const attempts = new Map<string,{count:number;until:number}>();
+app.use('/api/auth/login', (req,res,next) => {
+ const now=Date.now(); for(const [key,value] of attempts) if(value.until<now) attempts.delete(key);
+ const key=req.ip || 'local';const entry=attempts.get(key)||{count:0,until:now+60000};entry.count++;attempts.set(key,entry);
+ if(entry.count>15){res.status(429).json({error:'Too many login attempts. Try again in one minute.'});return;} next();
+});
+
 app.post('/api/auth/login', wrap(async (req, res) => {
   const { username, password } = req.body as { username?: string; password?: string };
+  if (typeof username !== 'string' || typeof password !== 'string') return res.status(400).json({error:'Enter username and password.'});
   const { rows } = await pool.query('SELECT id, password_hash FROM users WHERE username = $1', [username || '']);
   const ok = rows[0] && (await bcrypt.compare(password || '', rows[0].password_hash as string));
   if (!ok) return res.status(401).json({ error: 'Wrong username or password.' });
@@ -46,7 +62,8 @@ app.get('/api/products', (req, res, next) => (req.query.all ? requireAdmin(req, 
 function validProduct(b: Record<string, unknown>): string | null {
   if (typeof b.name !== 'string' || !b.name.trim()) return 'Enter a product name.';
   if (!CATS.includes(b.category as string)) return 'Unknown category.';
-  if (!Number.isInteger(b.price) || (b.price as number) <= 0) return 'Price must be a positive number.';
+  if (!Number.isInteger(b.price) || (b.price as number) <= 0 || (b.price as number) > 1000000) return 'Price must be a positive number.';
+  if ((b.name as string).length > 100 || (b.description != null && (typeof b.description !== 'string' || b.description.length > 1000)) || (b.active != null && typeof b.active !== 'boolean')) return 'Invalid product details.';
   return null;
 }
 app.post('/api/products', requireAdmin, wrap(async (req, res) => {
@@ -59,21 +76,22 @@ app.post('/api/products', requireAdmin, wrap(async (req, res) => {
 app.put('/api/products/:id', requireAdmin, wrap(async (req, res) => {
   const b = req.body as Record<string, unknown>; const bad = validProduct(b);
   if (bad) return res.status(400).json({ error: bad });
-  await pool.query('UPDATE products SET name=$1, category=$2, price=$3, description=$4, active=$5 WHERE id=$6',
+  const updated = await pool.query('UPDATE products SET name=$1, category=$2, price=$3, description=$4, active=$5 WHERE id=$6',
     [b.name, b.category, b.price, b.description ?? '', b.active !== false, Number(req.params.id)]);
+  if (!updated.rowCount) return res.status(404).json({error:'Product not found.'});
   res.json({ ok: true });
 }));
 
 /* ---- orders ---- */
 const ORDERS_SQL = (where: string) => `
-  SELECT o.id, o.total, o.status,
+  SELECT o.id, o.total, o.status, o.created_at AS "createdAt", o.is_demo AS "isDemo",
          COALESCE(json_agg(json_build_object('name', i.name, 'price', i.price, 'qty', i.qty)) FILTER (WHERE i.id IS NOT NULL), '[]') AS items
   FROM orders o LEFT JOIN order_items i ON i.order_id = o.id ${where}
   GROUP BY o.id ORDER BY o.id DESC`;
 
 app.post('/api/orders', wrap(async (req, res) => {
   const lines = (req.body as { items?: { productId: number; qty: number }[] }).items;
-  if (!Array.isArray(lines) || !lines.length || lines.some((l) => !Number.isInteger(l.qty) || l.qty < 1 || l.qty > 50))
+  if (!Array.isArray(lines) || !lines.length || lines.length > 100 || lines.some((l) => !l || !Number.isInteger(l.productId) || !Number.isInteger(l.qty) || l.qty < 1 || l.qty > 50))
     return res.status(400).json({ error: 'Cart is empty or invalid.' });
   const client = await pool.connect();
   try {
@@ -102,13 +120,30 @@ app.get('/api/orders', requireAdmin, wrap(async (_req, res) => { res.json((await
 app.patch('/api/orders/:id/status', requireAdmin, wrap(async (req, res) => {
   const { status } = req.body as { status?: string };
   if (!status || !STATUSES.includes(status)) return res.status(400).json({ error: 'Unknown status.' });
-  await pool.query('UPDATE orders SET status = $1 WHERE id = $2', [status, Number(req.params.id)]);
+  const allowed: Record<string,string[]> = {Preparing:['New'],Ready:['Preparing'],Completed:['Ready'],Cancelled:['New','Preparing']};
+  if(!allowed[status]) return res.status(400).json({error:'Invalid status transition.'});
+  const updated=await pool.query('UPDATE orders SET status = $1 WHERE id = $2 AND status = ANY($3::text[]) RETURNING id',[status,Number(req.params.id),allowed[status]]);
+  if(!updated.rowCount) return res.status(409).json({error:'Order not found or status already changed. Refresh the list.'});
   res.json({ ok: true });
 }));
 
+app.get('/api/analytics', requireAdmin, wrap(async (_req,res) => {
+ const [summary,popular,daily,hours] = await Promise.all([
+ pool.query("SELECT COUNT(*)::int AS count, COUNT(*) FILTER (WHERE is_demo)::int AS demo_count, COALESCE(SUM(total) FILTER (WHERE status='Completed'),0)::float8 AS revenue, COALESCE(AVG(total) FILTER (WHERE status='Completed'),0)::float8 AS average, COUNT(*) FILTER (WHERE status IN ('New','Preparing'))::int AS queue FROM orders"),
+ pool.query("SELECT i.name AS label, SUM(i.qty)::int AS value FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status <> 'Cancelled' GROUP BY i.name ORDER BY value DESC LIMIT 8"),
+ pool.query("SELECT to_char(created_at AT TIME ZONE 'Asia/Qyzylorda','YYYY-MM-DD') AS label, SUM(total)::int AS value FROM orders WHERE status='Completed' GROUP BY label ORDER BY label DESC LIMIT 14"),
+ pool.query("SELECT to_char(created_at AT TIME ZONE 'Asia/Qyzylorda','HH24:00') AS label, COUNT(*)::int AS value FROM orders GROUP BY label ORDER BY label")]);
+ const s=summary.rows[0];res.json({...s,popular:popular.rows,daily:daily.rows.reverse(),hours:hours.rows,wait:Math.min(60,5+s.queue*3)});
+}));
+const publicDir=path.resolve(__dirname,'../../web/dist');
+if(fs.existsSync(publicDir)) { app.use(express.static(publicDir)); app.get(/^(?!\/api(?:\/|$)).*/,(_req,res)=>res.sendFile(path.join(publicDir,'index.html'))); }
+app.use('/api',(_req,res)=>res.status(404).json({error:'Endpoint not found.'}));
+
 app.use((e: Error & { status?: number }, _req: Request, res: Response, _next: NextFunction) => {
+  if ((e as {type?:string}).type === 'entity.parse.failed') return res.status(400).json({error:'Invalid JSON body.'});
   if (e.status) return res.status(e.status).json({ error: e.message });
   console.error(e); res.status(500).json({ error: 'Server error' });
 });
 
-app.listen(Number(process.env.PORT) || 4000, () => console.log('API is running'));
+const server = app.listen(Number(process.env.PORT) || 4000, () => console.log('DashFood: http://localhost:'+(process.env.PORT || 4000)));
+process.on('SIGTERM',()=>server.close(()=>{void pool.end();}));

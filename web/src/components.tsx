@@ -3,10 +3,10 @@ import { USE_API } from './api';
 import { useAuth } from './store';
 import type { Order } from './types';
 
-export const kzt = (n: number) => `${n} KZT`;
+export const kzt = (n: number) => `${new Intl.NumberFormat('en-US').format(n)} ₸`;
 export const FLOW = ['New', 'Preparing', 'Ready', 'Completed'] as const;
 
-export const Badge = ({ s }: { s: string }) => <span className={`badge s-${s}`}>{s.toUpperCase()}</span>;
+export const Badge = ({ s }: { s: string }) => <span className={`badge s-${s}`}>{s}</span>;
 
 export function OrderCard({ o, children, steps }: { o: Order; children?: ReactNode; steps?: boolean }) {
   const i = FLOW.indexOf(o.status as (typeof FLOW)[number]);
@@ -14,7 +14,7 @@ export function OrderCard({ o, children, steps }: { o: Order; children?: ReactNo
     <div className="card">
       <div className="row"><span className="name">Order #{o.id}</span><Badge s={o.status} /></div>
       <p className="sub">{o.items.map((it) => `${it.qty} × ${it.name}`).join(' · ')}</p>
-      <p className="price">Total: {kzt(o.total)}</p>
+      <p className="sub">{o.isDemo ? 'Synthetic demo order · ' : ''}{o.createdAt ? new Date(o.createdAt).toLocaleString('en-GB', {timeZone:'Asia/Qyzylorda'}) : ''}</p><p className="price">Total: {kzt(o.total)}</p>
       {steps && o.status !== 'Cancelled' && (
         <>
           <div className="steps" aria-hidden>{FLOW.map((f, k) => <i key={f} className={k <= i ? 'on' : ''} />)}</div>

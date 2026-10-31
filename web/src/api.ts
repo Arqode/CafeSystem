@@ -3,7 +3,7 @@
 // VITE_API_URL empty -> demo mode with localStorage (no server needed)
 import type { CartLine, Order, Product, ProductInput, Status } from './types';
 
-const BASE = import.meta.env.VITE_API_URL as string | undefined;
+const BASE = import.meta.env.VITE_DEMO === 'true' ? '' : (import.meta.env.VITE_API_URL || '/');
 export const USE_API = Boolean(BASE);
 
 const KEY = 'cafe-token';
@@ -14,6 +14,7 @@ export const token = {
 };
 
 export interface Api {
+  analytics(): Promise<{count:number;revenue:number;average:number;daily:{label:string;value:number}[];popular:{label:string;value:number}[];hours:{label:string;value:number}[];queue:number;wait:number}>;
   login(username: string, password: string): Promise<void>;
   products(all: boolean): Promise<Product[]>;
   saveProduct(p: ProductInput): Promise<void>;
@@ -26,11 +27,11 @@ export interface Api {
 /* ---------- real API ---------- */
 async function req<T>(path: string, init: RequestInit = {}): Promise<T> {
   const t = token.get();
-  const r = await fetch(BASE + path, {
+  const r = await fetch((BASE === '/' ? '' : BASE) + path, {
     ...init,
     headers: { 'Content-Type': 'application/json', ...(t ? { Authorization: `Bearer ${t}` } : {}) },
   });
-  if (r.status === 401 && t) { token.clear(); throw new Error('Session expired. Log in again.'); }
+  if (r.status === 401 && t) { token.clear(); window.dispatchEvent(new Event('dashfood-session-expired')); throw new Error('Session expired. Log in again.'); }
   if (!r.ok) {
     const e = (await r.json().catch(() => ({}))) as { error?: string };
     throw new Error(e.error || `Error ${r.status}`);
@@ -39,6 +40,7 @@ async function req<T>(path: string, init: RequestInit = {}): Promise<T> {
 }
 
 const http: Api = {
+  analytics: () => req('/api/analytics'),
   async login(username, password) {
     const r = await req<{ token: string }>('/api/auth/login', { method: 'POST', body: JSON.stringify({ username, password }) });
     token.set(r.token);
@@ -78,6 +80,7 @@ const load = (): DB => {
 const save = (d: DB) => { try { localStorage.setItem(MKEY, JSON.stringify(d)); } catch { /* ignore */ } };
 
 const mock: Api = {
+  async analytics() { const d=load(); const done=d.orders.filter(o=>o.status==='Completed'); const queue=d.orders.filter(o=>o.status==='New'||o.status==='Preparing').length; return {count:d.orders.length,revenue:done.reduce((a,o)=>a+o.total,0),average:done.length?done.reduce((a,o)=>a+o.total,0)/done.length:0,daily:[],popular:[],hours:[],queue,wait:Math.min(60,5+queue*3)}; },
   async login(u, p) {
     if (u === 'admin' && p === 'admin123') token.set('demo');
     else throw new Error('Wrong username or password.');

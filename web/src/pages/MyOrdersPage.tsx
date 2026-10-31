@@ -8,8 +8,8 @@ export default function MyOrdersPage() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [err, setErr] = useState('');
   const load = useCallback(() => {
-    Promise.all(getMine().map((id) => api.order(id).catch(() => null)))
-      .then((r) => setOrders((r.filter(Boolean) as Order[]).sort((a, b) => b.id - a.id)))
+    Promise.all(getMine().map((id) => api.order(id)))
+      .then((r) => { setErr(''); setOrders(r.sort((a,b)=>b.id-a.id)); })
       .catch((e: Error) => setErr(e.message));
   }, []);
   useEffect(() => { load(); const t = setInterval(load, 8000); return () => clearInterval(t); }, [load]);

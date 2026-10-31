@@ -3,7 +3,7 @@ import { api } from '../api';
 import { FLOW, OrderCard } from '../components';
 import type { Order, Status } from '../types';
 
-const FILTERS = ['All', 'New', 'Preparing', 'Ready', 'Completed'] as const;
+const FILTERS = ['All', 'New', 'Preparing', 'Ready', 'Completed', 'Cancelled'] as const;
 const LABEL = ['Accept order', 'Mark as ready', 'Complete order'];
 
 export default function AdminOrdersPage() {
@@ -14,7 +14,7 @@ export default function AdminOrdersPage() {
   useEffect(() => { load(); const t = setInterval(load, 8000); return () => clearInterval(t); }, [load]);
 
   const change = async (id: number, s: Status) => { try { await api.setStatus(id, s); load(); } catch (e) { setErr((e as Error).message); } };
-  const list = orders.filter((o) => (filter === 'All' ? o.status !== 'Completed' && o.status !== 'Cancelled' : o.status === filter));
+  const list = orders.filter((o) => (filter === 'All' ? true : o.status === filter));
 
   return (
     <div className="panel">

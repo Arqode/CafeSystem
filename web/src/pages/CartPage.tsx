@@ -8,6 +8,7 @@ export default function CartPage({ products, onMenu, onPlaced }: { products: Pro
   const { cart, dispatch } = useCart();
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const unavailable = cart.some(l => !products.some(p => p.id === l.productId));
   const total = cartTotal(cart, products);
 
   if (cart.length === 0) {
@@ -23,7 +24,7 @@ export default function CartPage({ products, onMenu, onPlaced }: { products: Pro
       <div className="row" style={{ justifyContent: 'flex-start' }}><button className="btn line sm" onClick={onMenu}>‹ Menu</button><h2 style={{ margin: 0 }}>Your order</h2></div>
       <h3>Selected products</h3>
       {cart.map((l) => {
-        const p = products.find((x) => x.id === l.productId); if (!p) return null;
+        const p = products.find((x) => x.id === l.productId); if (!p) return <div className="card" key={l.productId}><p>This item is no longer available.</p><button className="btn line" onClick={() => dispatch({t:'remove',id:l.productId})}>Remove unavailable item</button></div>;
         return (
           <div className="card" key={l.productId}>
             <div className="row"><span className="name">{p.name}</span><span className="sub">{kzt(p.price)}</span></div>
@@ -32,7 +33,7 @@ export default function CartPage({ products, onMenu, onPlaced }: { products: Pro
                 <div className="qty">
                   <button aria-label="Decrease quantity" disabled={l.qty < 2} onClick={() => dispatch({ t: 'dec', id: p.id })}>−</button>
                   <span aria-live="polite">{l.qty}</span>
-                  <button aria-label="Increase quantity" onClick={() => dispatch({ t: 'inc', id: p.id })}>+</button>
+                  <button disabled={l.qty >= 50} aria-label="Increase quantity" onClick={() => dispatch({ t: 'inc', id: p.id })}>+</button>
                 </div></div>
               <button className="btn line sm" onClick={() => dispatch({ t: 'remove', id: p.id })}>Remove</button>
             </div>
@@ -41,9 +42,9 @@ export default function CartPage({ products, onMenu, onPlaced }: { products: Pro
         );
       })}
       <div className="card"><div className="row"><span>Subtotal</span><span>{kzt(total)}</span></div><div className="row total"><span>Total</span><span>{kzt(total)}</span></div></div>
-      <div className="card"><div className="name">Pickup</div><p className="sub">Estimated preparation: 15 min</p></div>
+      <div className="card"><div className="name">Pickup</div><p className="sub">Estimated preparation: 15 min. Payment at the café.</p></div>
       {err && <p className="err" role="alert">{err}</p>}
-      <button className="btn block" style={{ marginTop: 14 }} disabled={busy} onClick={place}>{busy ? 'PLACING…' : 'PLACE ORDER'}</button>
+      <button className="btn block" style={{ marginTop: 14 }} disabled={busy || unavailable} onClick={place}>{busy ? 'PLACING…' : 'Place order · Pay at pickup'}</button>
     </div>
   );
 }

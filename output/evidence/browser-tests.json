@@ -1,0 +1,21 @@
+{
+  "testedAt": "2026-10-31T10:10:43.248Z",
+  "widths": [
+    320,
+    375,
+    768,
+    1440
+  ],
+  "checks": [
+    "no horizontal overflow",
+    "menu",
+    "cart quantity persists after refresh",
+    "checkout",
+    "staff authentication",
+    "staff order transitions",
+    "customer sees Ready",
+    "menu management",
+    "three data charts"
+  ],
+  "errors": []
+}

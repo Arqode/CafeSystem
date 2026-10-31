@@ -15,7 +15,7 @@ const PHOTOS: Record<string, { slug: string; alt: string; width?: number; height
 export function ProductPhoto({ product, priority }: { product: Product; priority: boolean }) {
   const photo = PHOTOS[product.name.trim().toLowerCase()];
   // Staff-created or renamed products retain the original text card.
-  if (!photo) return null;
+  if (!photo) return <figure className="product-photo fallback-photo"><img src="/logo.svg" width="800" height="500" alt={product.name} /></figure>;
   const width = photo.width ?? 800;
   const height = photo.height ?? 500;
   return (
@@ -23,14 +23,14 @@ export function ProductPhoto({ product, priority }: { product: Product; priority
       <img
         src={`/media/${photo.slug}-${width}.webp`}
         srcSet={`/media/${photo.slug}-400.webp 400w, /media/${photo.slug}-${width}.webp ${width}w`}
-        sizes="(max-width: 400px) calc(100vw - 84px), (max-width: 520px) calc(100vw - 92px), 428px"
+        sizes="(max-width: 600px) calc(100vw - 64px), (max-width: 1000px) 45vw, 350px"
         width={width}
         height={height}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         alt={photo.alt}
       />
-      <figcaption>Example photo · actual presentation may vary</figcaption>
+
     </figure>
   );
 }

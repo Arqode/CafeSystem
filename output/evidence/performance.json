@@ -1,0 +1,66 @@
+{
+  "testedAt": "2026-10-31T10:11:08.709Z",
+  "browser": "156.0.8078.48",
+  "method": "Chrome DevTools Protocol, cache disabled, Fast 4G conditions; automated equivalent, not a screenshot of the Network panel",
+  "source": "https://chromium.googlesource.com/devtools/devtools-frontend/+/HEAD/front_end/core/sdk/NetworkManager.ts",
+  "viewport": "375x812 DPR1",
+  "conditions": {
+    "downloadBytesPerSecond": 1012500,
+    "uploadBytesPerSecond": 168750,
+    "latencyMs": 165
+  },
+  "results": [
+    {
+      "screen": "menu",
+      "run": 1,
+      "domContentLoadedMs": 890,
+      "loadMs": 890,
+      "interactiveMs": 1856
+    },
+    {
+      "screen": "menu",
+      "run": 2,
+      "domContentLoadedMs": 862,
+      "loadMs": 862,
+      "interactiveMs": 1351
+    },
+    {
+      "screen": "menu",
+      "run": 3,
+      "domContentLoadedMs": 865,
+      "loadMs": 865,
+      "interactiveMs": 1318
+    },
+    {
+      "screen": "cart",
+      "run": 1,
+      "domContentLoadedMs": 869,
+      "loadMs": 869,
+      "interactiveMs": 1196
+    },
+    {
+      "screen": "cart",
+      "run": 2,
+      "domContentLoadedMs": 863,
+      "loadMs": 863,
+      "interactiveMs": 1186
+    },
+    {
+      "screen": "cart",
+      "run": 3,
+      "domContentLoadedMs": 884,
+      "loadMs": 884,
+      "interactiveMs": 1189
+    }
+  ],
+  "averages": {
+    "menu": {
+      "loadMs": 872,
+      "interactiveMs": 1508
+    },
+    "cart": {
+      "loadMs": 872,
+      "interactiveMs": 1190
+    }
+  }
+}
