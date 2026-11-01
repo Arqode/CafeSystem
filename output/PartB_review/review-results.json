@@ -1,0 +1,74 @@
+{
+  "reviewedAt": "2026-11-01T14:45:56.665Z",
+  "reviewer": "Codex automated browser-assisted review; not external human participants",
+  "browser": "156.0.8078.74",
+  "viewport": "375x812",
+  "evidence": [
+    {
+      "id": "F01",
+      "observation": "At 375px some navigation destinations are outside the visible tab strip. They require horizontal scrolling without an explicit instruction.",
+      "heuristic": "Recognition rather than recall; visibility of system status",
+      "measurement": {
+        "clientWidth": 339,
+        "scrollWidth": 414,
+        "items": [
+          {
+            "label": "Menu",
+            "left": 18,
+            "right": 49.484375
+          },
+          {
+            "label": "Cart",
+            "left": 73.484375,
+            "right": 96.328125
+          },
+          {
+            "label": "My orders",
+            "left": 120.328125,
+            "right": 175.625
+          },
+          {
+            "label": "Staff orders",
+            "left": 199.625,
+            "right": 262.796875
+          },
+          {
+            "label": "Manage menu",
+            "left": 286.796875,
+            "right": 365.34375
+          },
+          {
+            "label": "Insights",
+            "left": 389.34375,
+            "right": 431.890625
+          }
+        ],
+        "viewport": 375
+      },
+      "plan": "Add a clearly labelled mobile navigation control or a visible scroll hint."
+    },
+    {
+      "id": "F02",
+      "observation": "Cheeseburger returns one product, but the same name with leading and trailing spaces returns zero products.",
+      "heuristic": "Error prevention; flexibility and efficiency of use",
+      "measurement": {
+        "query": " Cheeseburger ",
+        "expectedMatches": 1,
+        "actualMatches": 0
+      },
+      "plan": "Trim whitespace before matching search input; repeat both queries."
+    },
+    {
+      "id": "F03",
+      "observation": "Editing the last product opens a form above the current scroll position. The form is outside the viewport and focus remains on Edit.",
+      "heuristic": "Visibility of system status",
+      "measurement": {
+        "top": -1231,
+        "bottom": -785,
+        "viewport": 812,
+        "activeElement": "Edit"
+      },
+      "plan": "After opening edit, scroll to the form and focus its Name field. Retest the last product on mobile."
+    }
+  ]
+}
