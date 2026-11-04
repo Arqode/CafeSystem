@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import { api } from '../api';
 import { kzt } from '../components';
 import { addMine, cartTotal, useCart } from '../store';
@@ -8,15 +8,27 @@ export default function CartPage({ products, onMenu, onPlaced }: { products: Pro
   const { cart, dispatch } = useCart();
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const [customerName, setCustomerName] = useState('');
+  const [nameError, setNameError] = useState('');
+  const nameInput = useRef<HTMLInputElement>(null);
   const unavailable = cart.some(l => !products.some(p => p.id === l.productId));
   const total = cartTotal(cart, products);
 
   if (cart.length === 0) {
     return <div className="panel"><h2>Your order</h2><div className="empty">Your cart is empty.<br /><br /><button className="btn" onClick={onMenu}>Open menu</button></div></div>;
   }
-  const place = async () => {
+  const place = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (busy || unavailable) return;
+    const name = customerName.trim().replace(/\s+/g, ' ');
+    if (!name || name.length > 80 || !/\p{L}/u.test(name) || /[\u0000-\u001f\u007f]/.test(name)) {
+      setNameError('Enter your name so we can call you when your order is ready.');
+      nameInput.current?.focus();
+      return;
+    }
+    setNameError('');
     setBusy(true); setErr('');
-    try { const o = await api.placeOrder(cart); addMine(o.id); dispatch({ t: 'clear' }); onPlaced(); }
+    try { const o = await api.placeOrder(cart, name); addMine(o.id); dispatch({ t: 'clear' }); onPlaced(); }
     catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   };
   return (
@@ -42,9 +54,20 @@ export default function CartPage({ products, onMenu, onPlaced }: { products: Pro
         );
       })}
       <div className="card"><div className="row"><span>Subtotal</span><span>{kzt(total)}</span></div><div className="row total"><span>Total</span><span>{kzt(total)}</span></div></div>
-      <div className="card"><div className="name">Pickup</div><p className="sub">Estimated preparation: 15 min. Payment at the café.</p></div>
-      {err && <p className="err" role="alert">{err}</p>}
-      <button className="btn block" style={{ marginTop: 14 }} disabled={busy || unavailable} onClick={place}>{busy ? 'PLACING…' : 'Place order · Pay at pickup'}</button>
+      <form className="checkout" onSubmit={place} noValidate>
+        <section className="pickup-details" aria-labelledby="pickup-heading">
+          <h3 id="pickup-heading">Who’s picking up?</h3>
+          <p className="sub" id="pickup-help">We’ll call this name when your order is ready.</p>
+          <label htmlFor="customer-name">Your name <span className="field-required">(required)</span></label>
+          <input ref={nameInput} id="customer-name" name="customerName" autoComplete="given-name" placeholder="e.g. Artur" required maxLength={80}
+            value={customerName} disabled={busy} aria-invalid={Boolean(nameError)} aria-describedby={`pickup-help${nameError ? ' customer-name-error' : ''}`}
+            onChange={(e) => { setCustomerName(e.target.value); setNameError(''); }} />
+          {nameError && <p className="field-error" id="customer-name-error" role="alert">{nameError}</p>}
+          <p className="pickup-payment">Pay at the café when you collect your order.</p>
+        </section>
+        {err && <p className="err" role="alert">{err}</p>}
+        <button className="btn block" style={{ marginTop: 14 }} disabled={busy || unavailable} type="submit">{busy ? 'PLACING…' : 'Place order · Pay at pickup'}</button>
+      </form>
     </div>
   );
 }

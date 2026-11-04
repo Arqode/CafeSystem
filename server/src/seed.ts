@@ -20,7 +20,7 @@ import { pool } from './db';
  const q=products[(n+2)%products.length]; const total=p.price*qty+q.price;
  const stamp=new Date(Date.UTC(2026,9,15+n%14,4+(n*7)%12,n%60));
  const status=n%13===0?'Cancelled':'Completed';
- const order=await client.query('INSERT INTO orders(total,status,created_at,is_demo) VALUES($1,$2,$3,TRUE) RETURNING id',[total,status,stamp]);
+ const order=await client.query('INSERT INTO orders(total,status,created_at,is_demo,customer_name) VALUES($1,$2,$3,TRUE,$4) RETURNING id',[total,status,stamp,`Demo guest ${n+1}`]);
  await client.query('INSERT INTO order_items(order_id,name,price,qty) VALUES($1,$2,$3,$4),($1,$5,$6,1)',[order.rows[0].id,p.name,p.price,qty,q.name,q.price]);
  }
  }

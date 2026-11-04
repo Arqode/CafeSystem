@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-31T09:59:35.019Z",
+  "testedAt": "2026-11-04T05:39:43.703Z",
   "base": "http://localhost:4000",
   "checks": [
     "PostgreSQL is connected",
@@ -15,9 +15,21 @@
     "Empty order is rejected",
     "Malformed order line is rejected",
     "Quantity greater than 50 is rejected",
+    "Invalid or missing pickup name is rejected: undefined",
+    "Invalid or missing pickup name is rejected: null",
+    "Invalid or missing pickup name is rejected: 17",
+    "Invalid or missing pickup name is rejected: {}",
+    "Invalid or missing pickup name is rejected: \"\"",
+    "Invalid or missing pickup name is rejected: \"   \"",
+    "Invalid or missing pickup name is rejected: \"123\"",
+    "Invalid or missing pickup name is rejected: \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"",
+    "Invalid or missing pickup name is rejected: \"Artur\\u0000\"",
+    "Invalid pickup names do not create database orders",
     "Order is saved with the price calculated by the server",
+    "Pickup name supports Unicode and apostrophes and normalizes spaces",
     "Created order is read from the database",
-    "Customer order appears in staff panel",
+    "Public order lookup does not reveal the pickup name",
+    "Staff order list reads the saved pickup name",
     "Skipping workflow steps is rejected",
     "Staff changes status to Preparing",
     "Customer sees Preparing from database",
@@ -30,5 +42,5 @@
     "Disabled product is hidden from customer menu",
     "Disabled product cannot be ordered"
   ],
-  "syntheticVerificationOrder": 121
+  "syntheticVerificationOrder": 124
 }

@@ -37,6 +37,10 @@ WHERE NOT EXISTS (SELECT 1 FROM products);
 
 
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS is_demo BOOLEAN NOT NULL DEFAULT FALSE;
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS customer_name TEXT NOT NULL DEFAULT '';
+-- Label historical synthetic orders honestly; real older orders keep an empty name.
+UPDATE orders SET customer_name = 'Demo guest ' || id
+WHERE is_demo AND customer_name = '';
 CREATE INDEX IF NOT EXISTS order_items_order_id_idx ON order_items(order_id);
 CREATE INDEX IF NOT EXISTS orders_created_at_idx ON orders(created_at);
 INSERT INTO products(name,category,price,description)

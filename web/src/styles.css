@@ -73,3 +73,15 @@ html{scroll-behavior:smooth;scroll-padding-top:24px}body{font-family:"Segoe UI",
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
 .chart svg{width:100%;height:auto;margin-top:20px}.data-table{width:100%;border-collapse:collapse;font-size:12px}.data-table th,.data-table td{text-align:left;padding:7px;border-bottom:1px solid var(--line)}details summary{font-size:12px;cursor:pointer;color:var(--brand)}
+.pickup-details{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.pickup-details h3{margin:0 0 6px;font-size:20px;letter-spacing:-.02em}
+.pickup-details label{margin-top:18px}
+.field-required{font-weight:400;color:var(--mute)}
+.pickup-details input{margin-top:6px;max-width:480px;caret-color:var(--brand)}
+.pickup-details input::placeholder{color:var(--mute);opacity:1}
+.pickup-details input[aria-invalid=true]{border-color:var(--bad)}
+.field-error{margin:8px 0 0;color:var(--bad);font-size:14px}
+.pickup-payment{margin:14px 0 0;color:var(--mute);font-size:13px}
+.order-customer{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin:12px 0}
+.order-customer span{color:var(--mute);font-size:13px}
+.order-customer strong{font-size:19px;letter-spacing:-.02em;overflow-wrap:anywhere;min-width:0}

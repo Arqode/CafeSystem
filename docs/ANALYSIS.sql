@@ -28,6 +28,6 @@ SELECT COUNT(*) AS orders,
 FROM orders;
 
 -- Demonstrate persistence: show newest order and its lines.
-SELECT o.id, o.status, o.total, o.created_at, i.name, i.price, i.qty
+SELECT o.id, o.customer_name, o.status, o.total, o.created_at, i.name, i.price, i.qty
 FROM orders o JOIN order_items i ON i.order_id=o.id
 WHERE o.id=(SELECT MAX(id) FROM orders);

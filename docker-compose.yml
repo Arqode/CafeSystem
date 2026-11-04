@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: cafe
-      POSTGRES_PASSWORD: ${DB_PASSWORD:?Run setup.ps1 first}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Run bash setup.sh (Mac/Linux) or setup.ps1 (Windows) first}
       POSTGRES_DB: cafe
     volumes: [dashfood_pgdata:/var/lib/postgresql/data]
     healthcheck:
@@ -17,9 +17,9 @@ services:
     environment:
       PORT: 4000
       DATABASE_URL: postgres://cafe:${DB_PASSWORD}@db:5432/cafe
-      JWT_SECRET: ${JWT_SECRET:?Run setup.ps1 first}
+      JWT_SECRET: ${JWT_SECRET:?Run bash setup.sh (Mac/Linux) or setup.ps1 (Windows) first}
       ADMIN_USERNAME: admin
-      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run setup.ps1 first}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run bash setup.sh (Mac/Linux) or setup.ps1 (Windows) first}
       CORS_ORIGIN: http://localhost:4000
       TRUST_PROXY: 1
     ports: ["4000:4000"]

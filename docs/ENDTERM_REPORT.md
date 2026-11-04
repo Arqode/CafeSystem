@@ -62,7 +62,7 @@ were added for DashFood and Stage 2.
 
 ### A3. Deployment and security
 
-Exact launch instructions are in README.md. Run setup.ps1 with Docker Desktop open,
+Exact launch instructions are in ИНСТРУКЦИЯ.md. With Docker Desktop open, run bash setup.sh on macOS/Linux or setup.ps1 on Windows,
 then visit http://localhost:4000. Database state persists in a named Docker volume.
 Optional Caddy serves https://localhost; a local CA requires explicit trust on the client.
 Public HTTPS deployment and measured uptime are not claimed.
@@ -74,10 +74,12 @@ from the database, ignoring browser-supplied totals. Login attempts and JSON bod
 are limited. Status updates follow New → Preparing → Ready → Completed, with
 cancellation from New/Preparing. The automated checks demonstrate these boundaries.
 
-The prototype avoids collecting names, phone numbers, addresses or payment details.
+The prototype requires a pickup name for each new order and stores it in orders.customer_name.
+Staff see the name in the authenticated order list; public order lookup omits it.
+Phone numbers, addresses and payment details are not collected.
 Cart state and order IDs are stored in the customer's browser. Order IDs are sequential
 and order lookup exposes item/status information; stronger tracking tokens or account
-ownership would be needed before collecting personal customer data. Device/session
+ownership are still required for stronger protection of customer order history. Device/session
 storage should not be treated as cross-device identity. The Stage 1 / Assignment 3
 privacy report and instructor annotations were not provided and must be cross-checked.
 

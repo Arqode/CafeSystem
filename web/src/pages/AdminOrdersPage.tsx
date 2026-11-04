@@ -28,7 +28,7 @@ export default function AdminOrdersPage() {
       {list.map((o) => {
         const i = FLOW.indexOf(o.status as (typeof FLOW)[number]);
         return (
-          <OrderCard key={o.id} o={o}>
+          <OrderCard key={o.id} o={o} showCustomer>
             {i >= 0 && i < 3 && (
               <div className="actions">
                 <button className="btn" style={{ flex: 1 }} onClick={() => change(o.id, FLOW[i + 1])}>{LABEL[i]}</button>

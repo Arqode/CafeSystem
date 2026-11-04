@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-11-01T14:46:03.821Z",
+  "testedAt": "2026-11-04T05:40:04.195Z",
   "widths": [
     320,
     375,
@@ -10,6 +10,8 @@
     "no horizontal overflow",
     "menu",
     "cart quantity persists after refresh",
+    "required pickup name and no empty submission",
+    "pickup name saved and visible to staff",
     "checkout",
     "staff authentication",
     "staff order transitions",

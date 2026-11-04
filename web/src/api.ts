@@ -18,7 +18,7 @@ export interface Api {
   login(username: string, password: string): Promise<void>;
   products(all: boolean): Promise<Product[]>;
   saveProduct(p: ProductInput): Promise<void>;
-  placeOrder(lines: CartLine[]): Promise<Order>;
+  placeOrder(lines: CartLine[], customerName: string): Promise<Order>;
   order(id: number): Promise<Order>;
   allOrders(): Promise<Order[]>;
   setStatus(id: number, status: Status): Promise<void>;
@@ -50,7 +50,7 @@ const http: Api = {
     if (p.id) await req(`/api/products/${p.id}`, { method: 'PUT', body: JSON.stringify(p) });
     else await req('/api/products', { method: 'POST', body: JSON.stringify(p) });
   },
-  placeOrder: (lines) => req<Order>('/api/orders', { method: 'POST', body: JSON.stringify({ items: lines }) }),
+  placeOrder: (lines, customerName) => req<Order>('/api/orders', { method: 'POST', body: JSON.stringify({ items: lines, customerName }) }),
   order: (id) => req<Order>(`/api/orders/${id}`),
   allOrders: () => req<Order[]>('/api/orders'),
   async setStatus(id, status) { await req(`/api/orders/${id}/status`, { method: 'PATCH', body: JSON.stringify({ status }) }); },
@@ -92,14 +92,17 @@ const mock: Api = {
     else d.products.push({ ...p, id: Date.now() });
     save(d);
   },
-  async placeOrder(lines) {
+  async placeOrder(lines, name) {
+    const customerName = name.trim().replace(/\s+/g, ' ');
+    if (!customerName || customerName.length > 80 || !/\p{L}/u.test(customerName) || /[\u0000-\u001f\u007f]/.test(customerName))
+      throw new Error('Enter your name using 1–80 characters.');
     const d = load();
     const items = lines.map((l) => {
       const p = d.products.find((x) => x.id === l.productId && x.active);
       if (!p) throw new Error('A product is no longer available.');
       return { name: p.name, price: p.price, qty: l.qty };
     });
-    const o: Order = { id: d.next++, items, total: items.reduce((a, i) => a + i.price * i.qty, 0), status: 'New' };
+    const o: Order = { id: d.next++, customerName, items, total: items.reduce((a, i) => a + i.price * i.qty, 0), status: 'New' };
     d.orders.push(o); save(d); return o;
   },
   async order(id) {

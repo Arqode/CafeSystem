@@ -8,11 +8,12 @@ export const FLOW = ['New', 'Preparing', 'Ready', 'Completed'] as const;
 
 export const Badge = ({ s }: { s: string }) => <span className={`badge s-${s}`}>{s}</span>;
 
-export function OrderCard({ o, children, steps }: { o: Order; children?: ReactNode; steps?: boolean }) {
+export function OrderCard({ o, children, steps, showCustomer }: { o: Order; children?: ReactNode; steps?: boolean; showCustomer?: boolean }) {
   const i = FLOW.indexOf(o.status as (typeof FLOW)[number]);
   return (
     <div className="card">
       <div className="row"><span className="name">Order #{o.id}</span><Badge s={o.status} /></div>
+      {showCustomer && <p className="order-customer"><span>Pickup for</span><strong>{o.customerName || 'Name not provided'}</strong></p>}
       <p className="sub">{o.items.map((it) => `${it.qty} × ${it.name}`).join(' · ')}</p>
       <p className="sub">{o.isDemo ? 'Synthetic demo order · ' : ''}{o.createdAt ? new Date(o.createdAt).toLocaleString('en-GB', {timeZone:'Asia/Qyzylorda'}) : ''}</p><p className="price">Total: {kzt(o.total)}</p>
       {steps && o.status !== 'Cancelled' && (

@@ -83,8 +83,9 @@ app.put('/api/products/:id', requireAdmin, wrap(async (req, res) => {
 }));
 
 /* ---- orders ---- */
-const ORDERS_SQL = (where: string) => `
+const ORDERS_SQL = (where: string, includeCustomer = false) => `
   SELECT o.id, o.total, o.status, o.created_at AS "createdAt", o.is_demo AS "isDemo",
+         ${includeCustomer ? 'o.customer_name AS "customerName",' : ''}
          COALESCE(json_agg(json_build_object('name', i.name, 'price', i.price, 'qty', i.qty)) FILTER (WHERE i.id IS NOT NULL), '[]') AS items
   FROM orders o LEFT JOIN order_items i ON i.order_id = o.id ${where}
   GROUP BY o.id ORDER BY o.id DESC`;
@@ -93,6 +94,10 @@ app.post('/api/orders', wrap(async (req, res) => {
   const lines = (req.body as { items?: { productId: number; qty: number }[] }).items;
   if (!Array.isArray(lines) || !lines.length || lines.length > 100 || lines.some((l) => !l || !Number.isInteger(l.productId) || !Number.isInteger(l.qty) || l.qty < 1 || l.qty > 50))
     return res.status(400).json({ error: 'Cart is empty or invalid.' });
+  const rawName = (req.body as { customerName?: unknown }).customerName;
+  const customerName = typeof rawName === 'string' ? rawName.trim().replace(/\s+/g, ' ') : '';
+  if (!customerName || customerName.length > 80 || !/\p{L}/u.test(customerName) || /[\u0000-\u001f\u007f]/.test(customerName))
+    return res.status(400).json({ error: 'Enter your name using 1–80 characters.' });
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
@@ -104,10 +109,10 @@ app.post('/api/orders', wrap(async (req, res) => {
       return { name: p.name as string, price: p.price as number, qty: l.qty };
     });
     const total = items.reduce((a, i) => a + i.price * i.qty, 0);
-    const o = await client.query("INSERT INTO orders (total, status) VALUES ($1, 'New') RETURNING id", [total]);
+    const o = await client.query("INSERT INTO orders (total, status, customer_name) VALUES ($1, 'New', $2) RETURNING id", [total, customerName]);
     for (const i of items) await client.query('INSERT INTO order_items (order_id, name, price, qty) VALUES ($1,$2,$3,$4)', [o.rows[0].id, i.name, i.price, i.qty]);
     await client.query('COMMIT');
-    res.status(201).json({ id: o.rows[0].id, items, total, status: 'New' });
+    res.status(201).json({ id: o.rows[0].id, customerName, items, total, status: 'New' });
   } catch (e) { await client.query('ROLLBACK'); throw e; } finally { client.release(); }
 }));
 
@@ -116,7 +121,7 @@ app.get('/api/orders/:id', wrap(async (req, res) => {
   if (!rows[0]) return res.status(404).json({ error: 'Order not found.' });
   res.json(rows[0]);
 }));
-app.get('/api/orders', requireAdmin, wrap(async (_req, res) => { res.json((await pool.query(ORDERS_SQL(''))).rows); }));
+app.get('/api/orders', requireAdmin, wrap(async (_req, res) => { res.json((await pool.query(ORDERS_SQL('', true))).rows); }));
 app.patch('/api/orders/:id/status', requireAdmin, wrap(async (req, res) => {
   const { status } = req.body as { status?: string };
   if (!status || !STATUSES.includes(status)) return res.status(400).json({ error: 'Unknown status.' });
