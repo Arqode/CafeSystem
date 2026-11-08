@@ -1,0 +1,45 @@
+{
+  "source": "Results supplied by the team",
+  "participants": [
+    {
+      "participant": "U1",
+      "device": "iPhone",
+      "browser": "Safari",
+      "seconds": 31,
+      "issuesReported": "None",
+      "disabledProductBlocked": true,
+      "interfaceWorked": true,
+      "viewportWidth": null,
+      "testDate": null,
+      "helpReceived": null
+    },
+    {
+      "participant": "U2",
+      "device": "Windows PC",
+      "browser": "Google Chrome",
+      "seconds": 24,
+      "issuesReported": "None",
+      "disabledProductBlocked": true,
+      "interfaceWorked": true,
+      "viewportWidth": null,
+      "testDate": null,
+      "helpReceived": null
+    },
+    {
+      "participant": "U3",
+      "device": "Android phone",
+      "browser": "Google Chrome",
+      "seconds": 26,
+      "issuesReported": "None",
+      "disabledProductBlocked": true,
+      "interfaceWorked": true,
+      "viewportWidth": null,
+      "testDate": null,
+      "helpReceived": null
+    }
+  ],
+  "averageSeconds": 27,
+  "targetSeconds": 120,
+  "exactViewportRecorded": false,
+  "notes": "Test dates, device models, viewport widths and assistance were not supplied."
+}

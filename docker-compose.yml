@@ -22,7 +22,7 @@ services:
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run bash setup.sh (Mac/Linux) or setup.ps1 (Windows) first}
       CORS_ORIGIN: http://localhost:4000
       TRUST_PROXY: 1
-    ports: ["4000:4000"]
+    ports: ["127.0.0.1:4000:4000"]
     depends_on:
       db: {condition: service_healthy}
     healthcheck:
@@ -33,7 +33,7 @@ services:
     image: caddy:2-alpine
     profiles: [https]
     restart: unless-stopped
-    ports: ["80:80", "443:443"]
+    ports: ["127.0.0.1:80:80", "127.0.0.1:443:443"]
     environment:
       DASHFOOD_DOMAIN: ${DASHFOOD_DOMAIN:-localhost}
     volumes:

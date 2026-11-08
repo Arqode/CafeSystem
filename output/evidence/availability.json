@@ -1,0 +1,49 @@
+{
+  "base": "http://localhost:4000",
+  "startedAt": "2026-11-08T15:28:17.314Z",
+  "intervalMs": 1000,
+  "plannedSamples": 5,
+  "results": [
+    {
+      "scheduledAt": "2026-11-08T15:28:17.314Z",
+      "at": "2026-11-08T15:28:17.322Z",
+      "ok": true,
+      "missed": false,
+      "latencyMs": 83
+    },
+    {
+      "scheduledAt": "2026-11-08T15:28:18.314Z",
+      "at": "2026-11-08T15:28:18.314Z",
+      "ok": true,
+      "missed": false,
+      "latencyMs": 8
+    },
+    {
+      "scheduledAt": "2026-11-08T15:28:19.314Z",
+      "at": "2026-11-08T15:28:19.315Z",
+      "ok": true,
+      "missed": false,
+      "latencyMs": 9
+    },
+    {
+      "scheduledAt": "2026-11-08T15:28:20.314Z",
+      "at": "2026-11-08T15:28:20.315Z",
+      "ok": true,
+      "missed": false,
+      "latencyMs": 15
+    },
+    {
+      "scheduledAt": "2026-11-08T15:28:21.314Z",
+      "at": "2026-11-08T15:28:21.316Z",
+      "ok": true,
+      "missed": false,
+      "latencyMs": 9
+    }
+  ],
+  "recordedSamples": 5,
+  "missedSamples": 0,
+  "successfulSamples": 5,
+  "observedAvailabilityPercent": 100,
+  "complete": true,
+  "limitation": "Scheduled sample availability, not continuous uptime. Missed slots during monitor interruption count as unavailable. No long-term guarantee."
+}

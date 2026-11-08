@@ -59,10 +59,10 @@ were added for DashFood and Stage 2.
 | R9 | Administrator can change order status | Must | Done | A1-4/A1-5; API transitions | Workflow prevents skipped stages |
 | R10 | Administrator can add/edit products | Should | Done | A1-6; API create/edit check | Form and backend validation |
 | R11 | Administrator can disable products (confirm cropped text) | Must | Done for inferred requirement | API disabled-product checks | Original full sentence must be verified |
-| R12 | Menu/cart load in less than 2 seconds | Must / NFR | Done in automated Fast 4G measurement | performance.json | Attach manual Network-panel evidence for B3 |
-| R13 | Customer/server communication uses HTTPS | Must / NFR | Partly: local TLS configured; trust/deployment pending | Caddyfile; local HTTPS health check | Local CA must be trusted; public domain not deployed |
-| R14 | Order in no more than 5 main steps | Must / NFR | Done in UI; external validation pending | Menu → Add → Cart → Place order | Four main actions for a simple order |
-| R15 | At least 99% availability | Must / NFR | Partly: infrastructure configured; uptime unmeasured | Healthcheck, restart policy | Requires a defined monitoring period |
+| R12 | Menu/cart load in less than 2 seconds | Not specified in Stage 1 / NFR | Done in automated Fast 4G measurement | performance.json | Attach manual Network-panel evidence for B3 |
+| R13 | Customer/server communication uses HTTPS | Not specified in Stage 1 / NFR | Partly: local TLS configured; trust/deployment pending | Caddyfile; local HTTPS health check | Local CA must be trusted; public domain not deployed |
+| R14 | Order in no more than 5 main steps | Not specified in Stage 1 / NFR | Done in UI; external validation pending | Menu → Add → Cart → Name → Place order | Five main actions for a simple order |
+| R15 | At least 99% availability | Not specified in Stage 1 / NFR | Partly: infrastructure configured; uptime unmeasured | Healthcheck, restart policy | Requires a defined monitoring period |
 
 ### A3. Deployment and security
 
@@ -112,20 +112,16 @@ personally produced since Stage 1; the table does not certify unverified individ
 
 ### B1. Stage 1 success criteria
 
-The team confirms that the three most important requirements are its success criteria:
-“viewing the menu”, “adding products to the cart” and “placing an order”.
-The slide gives qualitative outcomes, not numerical timing targets. We preserve that
-scope and separately test the explicit R12/R14 performance/step requirements.
+The original Stage 1 criteria are checkout in less than 120 seconds, rejection of
+unavailable products and a working ordering interface at 360 px. Page 8 lists the
+three priority functions; those are not the success criteria.
 
-| Criterion | Expected outcome | Automated result | External user result |
-|---|---|---|---|
-| Viewing the menu | Available products and prices can be seen | Passed browser/API checks | Pending U1/U2/U3 |
-| Adding products to the cart | Selected products, quantities and total can be checked | Passed browser checks | Pending U1/U2/U3 |
-| Placing an order | Order is saved and available to staff | Passed browser/API checks | Pending U1/U2/U3 |
-
-No non-team participants have been tested by the development agent. Complete the
-participant/device/task/measurement table in docs/TESTING.md with at least three
-real people; do not present automated tests as human usability evidence.
+The final results supplied by the team are U1: 31 seconds on iPhone/Safari,
+U2: 24 seconds on Windows/Chrome, and U3: 26 seconds on Android/Chrome.
+All reported that disabled products were blocked and the interface worked; no
+problems were reported. Exact viewport widths, dates and assistance were not
+recorded. These are later Final results, not measurements from the original
+Stage 2 submission. The full table is in docs/FINAL_TESTING.md.
 
 ### B2. Usability findings
 
@@ -214,7 +210,7 @@ AND is_demo to the source query and record the extraction date.
 
 **Interpretation (150–200 words):**
 
-The DashFood analysis demonstrates three repeatable views of the same order database. Product totals compare the quantities ordered for each menu item, while daily completed revenue shows how order values change across dates. Hourly counts describe when requests enter the system. These measures answer different operational questions: popularity concerns preparation quantities, revenue concerns completed sales, and hourly demand concerns staffing. Cancelled orders are excluded from product popularity and revenue, but remain in the incoming-request count. An administrator could use a real version of these results to schedule an additional kitchen worker during a consistently busy period, then check whether preparation delays decrease. In this prototype, however, the main dataset consists of 120 generated orders, supplemented by development verification orders. Its regular patterns come from the seed algorithm and do not establish actual customer preferences, genuine peak hours or commercial performance. The short date range, limited menu and absence of measured preparation timestamps further restrict conclusions. The charts therefore validate the query and display method, while real operational decisions require representative observations over a longer period.
+We use three charts to look at the order database. Product totals compare the quantities ordered for each menu item, while daily completed revenue shows how order values change across dates. Hourly counts describe when requests enter the system. Each chart answers a different question: popularity concerns preparation quantities, revenue concerns completed sales, and hourly demand concerns staffing. Cancelled orders are excluded from product popularity and revenue, but remain in the incoming-request count. An administrator could use a real version of these results to schedule an additional kitchen worker during a consistently busy period, then check whether preparation delays decrease. In this prototype, however, the main dataset consists of 120 generated orders, supplemented by development verification orders. The seed code creates these patterns. They do not show real customer choices, busy hours or sales. The short date range, limited menu and absence of measured preparation timestamps further restrict conclusions. The charts therefore validate the query and display method, while real operational decisions require representative observations over a longer period.
 
 ## Part D — Smart technologies and IoT (15 points)
 
@@ -285,7 +281,7 @@ smart-rule demonstration, not a claim that the proposed IoT hardware is implemen
 - Testo and FDA primary sources linked in D1. Accessed 31 October 2026.
 - Existing media credits: web/public/media/credits.html; previous Assignment 4 reports retained.
 
-Before LMS submission: fill group/team identifiers; confirm contributions; include Stage 1
+Before submission: fill group/team identifiers; confirm contributions; include Stage 1
 annotations; add B1 external results, B2 findings and B3 Network evidence; verify full R11;
 confirm HTTPS trust and report actual availability observations; check PDF screenshots;
 rename the final completed PDF Group_Team_ICT_ProjectStage2.pdf; one submission per team.

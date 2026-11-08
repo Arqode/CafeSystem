@@ -15,5 +15,5 @@
 | Stage 2 F01 | Hidden mobile navigation | Visible six-route mobile grid, five-width regression check |
 | F02 | Search fails with spaces | trim() before search; whitespace-only query restores menu |
 | F03 | Editor outside viewport | Scroll to form, focus Name, return focus on Cancel |
-| Stage 2 B1 | External evidence incomplete | Participants tested according to team; no timing recorded; retest protocol retains original targets |
+| Stage 2 B1 | External evidence incomplete | Team supplied times of 31/24/26s, blocked products and working interfaces; dates and exact widths remain unrecorded |
 | B3 | App screenshots are not Network screenshots | CDP evidence retains real settings/values; manual DevTools evidence not falsely claimed |

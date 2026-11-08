@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="970" viewBox="0 0 1400 970" role="img" aria-labelledby="title description">
+<title id="title">DashFood as-built local architecture</title>
+<desc id="description">Customer and staff browsers connect over loopback HTTPS to Caddy. Caddy forwards HTTP to Express on a private Docker network. Express serves React, media, public APIs and JWT-protected staff APIs, and connects to PostgreSQL. Database volume persists on the development Mac. Optional HTTP is loopback only. The waiting rule uses orders without a physical sensor.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2b4c75"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#172d48}.title{font-size:29px;font-weight:700}.h{font-size:21px;font-weight:700}.t{font-size:17px}.note{font-size:16px;fill:#405671}.box{fill:white;stroke:#8fa7c3;stroke-width:1.5}.arrow{stroke:#2b4c75;stroke-width:2;fill:none;marker-end:url(#arrow)}</style>
+<rect width="1400" height="970" fill="#f5f8fc"/>
+<text x="40" y="48" class="title">DashFood — as built, local Docker deployment</text>
+<text x="40" y="77" class="note">Client devices • network • hosting • storage • security boundaries • software rule</text>
+<rect x="30" y="110" width="1340" height="720" rx="16" fill="#eaf1f9" stroke="#8fa7c3" stroke-dasharray="7 5"/>
+<text x="50" y="140" class="h">Development Mac / Docker Desktop host</text>
+<text x="50" y="166" class="note">Host ports bind 127.0.0.1 only. No Internet-facing server or cloud deployment.</text>
+<rect x="400" y="188" width="930" height="607" rx="12" fill="#f7fafd" stroke="#567aa5"/>
+<text x="795" y="230" class="h">Private Docker Compose network</text>
+<text x="795" y="260" class="note">Caddy + app + database containers</text>
+<rect x="50" y="198" width="300" height="180" rx="10" class="box"/>
+<text x="70" y="230" class="h">Customer / staff browser</text>
+<text x="70" y="262" class="t">React SPA: six screens</text>
+<text x="70" y="290" class="t">Desktop + mobile viewport</text>
+<text x="70" y="318" class="t">Cart / order IDs: localStorage</text>
+<text x="70" y="346" class="t">Staff JWT: sessionStorage</text>
+<text x="373" y="230" class="t">HTTPS :443</text>
+<text x="373" y="254" class="note">loopback / TLS</text>
+<path d="M350 280H490" class="arrow"/>
+<rect x="490" y="198" width="285" height="180" rx="10" class="box"/>
+<text x="510" y="230" class="h">Caddy container</text>
+<text x="510" y="262" class="t">https://localhost</text>
+<text x="510" y="290" class="t">TLS ends here; HTTP :80</text>
+<text x="510" y="318" class="t">redirects to HTTPS</text>
+<text x="510" y="346" class="note">Local CA; browser trust required</text>
+<path d="M633 378V470" class="arrow"/>
+<text x="645" y="401" class="note">HTTP :4000 inside Docker</text>
+<rect x="420" y="470" width="495" height="255" rx="10" class="box"/>
+<text x="440" y="502" class="h">Express app container — Node.js</text>
+<text x="440" y="535" class="t">Public: menu, create order, health</text>
+<text x="440" y="566" class="t">Receipt key: order read; JWT: staff operations</text>
+<text x="440" y="597" class="t">Validation, server prices, transaction, bcrypt</text>
+<text x="440" y="628" class="t">Built React + WebP / SVG: /app/web/dist</text>
+<text x="440" y="659" class="t">Smart rule: min(60, 5 + 3 × active queue)</text>
+<text x="440" y="693" class="note">Software only. No sensor, device API or AI model.</text>
+<path d="M350 350L380 350V580H420" class="arrow" stroke-dasharray="6 4"/>
+<text x="55" y="440" class="t">Optional direct HTTP :4000</text>
+<text x="55" y="466" class="note">Local development path;</text>
+<text x="55" y="490" class="note">does not meet HTTPS on that path.</text>
+<path d="M915 560H990" class="arrow"/>
+<text x="931" y="514" class="note">SQL</text>
+<text x="931" y="537" class="note">:5432</text>
+<rect x="990" y="470" width="320" height="255" rx="10" class="box"/>
+<text x="1010" y="502" class="h">PostgreSQL 16 container</text>
+<text x="1010" y="537" class="t">users (staff password hashes)</text>
+<text x="1010" y="566" class="t">products • orders (pickup name)</text>
+<text x="1010" y="595" class="t">order_items • seed_batches</text>
+<text x="1010" y="633" class="note">Password-authenticated SQL;</text>
+<text x="1010" y="658" class="note">internal link is not TLS-encrypted.</text>
+<text x="1010" y="693" class="note">No database host port published.</text>
+<path d="M1150 725V765" class="arrow"/>
+<text x="905" y="784" class="t">Persistent volume: dashfood_pgdata</text>
+<text x="50" y="762" class="note">Phone/tablet widths were emulated in Chrome.</text>
+<text x="50" y="788" class="note">Separate physical-device tests: not supplied.</text>
+<text x="40" y="869" class="h">Security and storage limits</text>
+<text x="40" y="901" class="t">Encrypted: browser → Caddy when HTTPS is used. Order reads require a secret receipt token. Staff operations require an admin JWT.</text>
+<text x="40" y="928" class="t">Data and media reside on this Mac's Docker virtual disk / app image. At-rest AES-256 and public-cloud hosting are not claimed.</text>
+<text x="40" y="955" class="note">Caddy certificates persist in caddy_data. Application media is served locally; the Stage 1 S3 document screenshot is not this runtime storage.</text>
+</svg>

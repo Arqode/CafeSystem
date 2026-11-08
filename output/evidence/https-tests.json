@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-11-08T15:27:23.810Z",
+  "base": "https://localhost",
+  "checks": [
+    "HTTPS health connects to PostgreSQL",
+    "Certificate and hostname verified against exported local CA; no insecure bypass",
+    "TLS encryption negotiated",
+    "HSTS header present",
+    "Frontend served through Caddy",
+    "Product image served through HTTPS",
+    "Staff endpoint still requires authentication through HTTPS"
+  ],
+  "protocol": "TLSv1.3",
+  "cipher": "TLS_AES_128_GCM_SHA256",
+  "certificateVerified": true,
+  "systemTrustChanged": false,
+  "scope": "Local Caddy deployment. Browser certificate trust and public hosting are separate."
+}

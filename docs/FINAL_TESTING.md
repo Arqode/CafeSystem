@@ -1,33 +1,34 @@
-# Final testing - 8 November 2026
+# Final user testing
 
-Source: midterm_ANNOTATED.pdf p5 (A3). Page 8 lists priority requirements R1/R3/R6,
-not success criteria. The original numerical targets must stay unchanged.
+Three people outside the team tried ordering on their own devices. The results
+below were supplied by the team. All three finished within the 120-second target.
+The average was 27 seconds. None reported a problem during these tasks.
 
-| Original criterion | Target | Stage 2 result | Final result | Met? |
-|---|---|---|---|---|
-| Customer can place order in less than 2 minutes | Human time <120s | No timed human evidence; slides list functional tasks | Browser journey works. Team reports participants tested without a timer | Timing pending |
-| Unavailable product cannot enter a new order | Zero accepted unavailable orders | API rejection reported | API rejects disabled products and public menu hides them | Automated pass; record human observation |
-| Main interface works at width 360px | Complete ordering flow, no document overflow | Supplied last pages measured 375px | New automated mobile checks explicitly include 360px | Automated pass; record human observation |
+| Participant | Device and browser | Order time | Problems reported | Disabled product blocked | Interface worked |
+|---|---|---:|---|---|---|
+| U1 | iPhone, Safari | 31 s | None | Yes | Yes |
+| U2 | Windows PC, Google Chrome | 24 s | None | Yes | Yes |
+| U3 | Android phone, Google Chrome | 26 s | None | Yes | Yes |
 
-The team reports sessions with Medet, Nurdaulet and Iskander. No completion times
-were measured. Do not infer timings or individual pass rates from automation.
+The notes do not include the test dates, device models, viewport widths or whether
+any help was given. These details have not been filled in retrospectively.
 
-## Short final retest
+## Comparison with Stage 1
 
-Each person starts in an isolated browser with a 360px viewport. Do not coach them.
-Start the timer when they begin the menu task and stop when a saved confirmation
-appears. Find Cheeseburger, add it, adjust quantity, remove an extra item, enter a
-pickup name, submit and find Ready after a facilitator updates the staff view.
-Record help, errors, duration and main action count separately.
+The criteria come from annotated Stage 1, page 5. The three priority functions on
+page 8 are a separate list.
 
-Negative test: add a separate enabled Test Tea to the cart. Staff disable it before
-submission. Checkout must reject it and create no order. Refresh hides the item.
+| Criterion | Target | Stage 2 evidence | Final result |
+|---|---|---|---|
+| Place an order | Less than 120 seconds | No recorded human times | 31, 24 and 26 seconds; all three met the target |
+| Prevent orders for unavailable products | No unavailable product accepted | API rejection | All three reported that the product was blocked; API checks also pass |
+| Ordering interface works at 360 px | Complete usable ordering flow | Earlier measurements used 375 px | All three reported a working interface; automated checks pass at 360 px. Human viewport widths were not recorded |
 
-| Participant code | Actual device/browser/viewport | Time, s | Errors/help | Disabled rejection | Full 360px flow | Date |
-|---|---|---|---|---|---|---|
-| U1 (Medet) | To record | Not measured | To record | To record | To record | To record |
-| U2 (Nurdaulet) | To record | Not measured | To record | To record | To record | To record |
-| U3 (Iskander) | To record | Not measured | To record | To record | To record | To record |
+These short sessions support the tested tasks. They do not show that the application
+has no bugs. The three previously fixed interface problems were engineering
+findings, not problems attributed to these participants.
 
-Retain unsuccessful sessions and explain them. Use fictitious pickup names and do
-not record contact details. Update final PDF and slides only after recording real values.
+## Evidence
+
+`output/evidence/user-tests.json` stores these results. Automated checks are kept
+separately in `api-tests.json`, `browser-tests.json` and `final-checks.json`.

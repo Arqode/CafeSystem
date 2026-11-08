@@ -1,53 +1,45 @@
 {
-  "capturedAt": "2026-11-08T11:46:10.864Z",
-  "count": 123,
+  "capturedAt": "2026-11-08T16:11:43.485Z",
+  "count": 137,
   "demo_count": 120,
-  "revenue": 620900,
-  "average": 5593.693693693694,
-  "queue": 1,
+  "revenue": 640900,
+  "average": 5573.04347826087,
+  "queue": 4,
   "popular": [
     {
       "label": "Cheeseburger",
-      "value": 45
+      "value": 69
+    },
+    {
+      "label": "Cheesecake",
+      "value": 43
+    },
+    {
+      "label": "Lemonade",
+      "value": 43
     },
     {
       "label": "Americano",
       "value": 43
     },
     {
-      "label": "Cheesecake",
-      "value": 42
-    },
-    {
-      "label": "Lemonade",
-      "value": 42
-    },
-    {
       "label": "Double Burger",
+      "value": 43
+    },
+    {
+      "label": "Chicken Burger",
       "value": 42
+    },
+    {
+      "label": "Cola",
+      "value": 41
     },
     {
       "label": "Brownie",
       "value": 41
-    },
-    {
-      "label": "Chicken Burger",
-      "value": 41
-    },
-    {
-      "label": "Cola",
-      "value": 40
     }
   ],
   "daily": [
-    {
-      "label": "2026-10-16",
-      "value": 59900
-    },
-    {
-      "label": "2026-10-17",
-      "value": 39300
-    },
     {
       "label": "2026-10-18",
       "value": 55900
@@ -93,22 +85,34 @@
       "value": 44300
     },
     {
+      "label": "2026-11-04",
+      "value": 10000
+    },
+    {
+      "label": "2026-11-06",
+      "value": 10000
+    },
+    {
       "label": "2026-11-08",
       "value": 5000
     }
   ],
   "hours": [
     {
+      "label": "08:00",
+      "value": 2
+    },
+    {
       "label": "09:00",
       "value": 10
     },
     {
       "label": "10:00",
-      "value": 10
+      "value": 13
     },
     {
       "label": "11:00",
-      "value": 10
+      "value": 12
     },
     {
       "label": "12:00",
@@ -128,7 +132,7 @@
     },
     {
       "label": "16:00",
-      "value": 13
+      "value": 10
     },
     {
       "label": "17:00",
@@ -144,8 +148,12 @@
     },
     {
       "label": "20:00",
-      "value": 10
+      "value": 14
+    },
+    {
+      "label": "23:00",
+      "value": 6
     }
   ],
-  "wait": 8
+  "wait": 17
 }

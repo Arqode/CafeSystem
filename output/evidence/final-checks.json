@@ -1,8 +1,7 @@
 {
-  "testedAt": "2026-11-08T11:46:10.868Z",
-  "browser": "156.0.8078.80",
+  "testedAt": "2026-11-08T15:27:51.603Z",
+  "browser": "157.0.8103.38",
   "checks": [
-    "Local HTTPS health succeeds over TLSv1.3 with a self-signed certificate (trust not asserted)",
     "F01: every navigation item is visible at 320, 360, 375, 768 and 1440 px",
     "F02: surrounding and whitespace-only search queries work",
     "F03: editing the last product focuses and displays its form at 360px",

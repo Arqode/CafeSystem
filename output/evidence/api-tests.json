@@ -1,6 +1,6 @@
 {
-  "testedAt": "2026-11-08T11:45:47.952Z",
-  "base": "http://127.0.0.1:4000",
+  "testedAt": "2026-11-08T15:27:23.736Z",
+  "base": "http://localhost:4000",
   "checks": [
     "PostgreSQL is connected",
     "Menu contains at least eight products with prices",
@@ -49,12 +49,12 @@
     "Null JSON body is rejected: /api/orders",
     "Null JSON body is rejected: /api/products",
     "Null JSON body is rejected: /api/auth/login",
-    "Null JSON body is rejected: /api/orders/121/status",
+    "Null JSON body is rejected: /api/orders/134/status",
     "Five concurrent checkout retries create exactly one order",
     "Only the first checkout request creates a record",
     "Reusing a checkout key for another cart is rejected",
     "Duplicate product lines cannot bypass the quantity limit",
     "Fractional KZT prices are rejected"
   ],
-  "syntheticVerificationOrder": 121
+  "syntheticVerificationOrder": 134
 }

@@ -119,3 +119,18 @@ tables and additive migration. `docs/ANALYSIS.sql`: repeatable queries.
 `comparison` are historical material, not the final assessment record.
 
 Repository: https://github.com/Arqode/CafeSystem
+
+## Verified local HTTPS and persistence
+
+Mac/Linux: `bash setup.sh --https`. The helper verifies the Caddy certificate using
+`.local-certs/root.crt`; browser trust requires explicit import. No system trust is changed.
+Run `node tools/check-https.mjs` to verify TLS and `node tools/test-persistence.mjs`
+to check database retention (brief app/DB restart; run with no concurrent orders).
+
+Russian single-file launch guide: [ИНСТРУКЦИЯ_ДЛЯ_ЭНДКИ.md](ИНСТРУКЦИЯ_ДЛЯ_ЭНДКИ.md).
+
+The monitor resumes its saved schedule on restart with the same settings. Missed slots
+count as unavailable; use `MONITOR_NEW_RUN=1` only for a deliberately new window.
+Keep the old results before resetting. A short run does not prove 99% long-term uptime.
+
+Final defense guide for all members: [ЗАЩИТА_ФАЙНАЛА.md](ЗАЩИТА_ФАЙНАЛА.md).

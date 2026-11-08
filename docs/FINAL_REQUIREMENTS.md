@@ -15,7 +15,7 @@ priority. Stage 1 functional priorities stay unchanged. Stage 2 column is histor
 | R8 | Staff see orders | Must | Done | Done | Login/list; guest 401 |
 | R9 | Staff update status | Must | Done | Done | Valid flow; rejected skipped step |
 | R10 | Staff add/edit products | Should | Done | Done | Create/edit; whole positive KZT |
-| R11 | Disable product (reconstructed) | Must | Inferred done | Function done; wording unresolved | Hidden menu product; checkout rejected |
+| R11 | Disable product (reconstructed) | Priority unconfirmed | Inferred done | Function done; wording unresolved | Hidden menu product; checkout rejected |
 | R12 | Menu/cart <2s | Must, clarified | 1.411s/1.208s ready, CDP Nov 1 | Current performance.json | 375x812 DPR1, cache off, Fast 4G, 3 runs/screen |
 | R13 | HTTPS | Must, clarified | Local only | Local TLS works; public trust pending | Self-signed 4443; Caddy domain profile |
 | R14 | Order <=5 main actions | Must, clarified | Four actions without name entry | Five including name; human observation pending | Menu, Add, Cart, name, submit |

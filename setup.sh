@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+task_https=false
+case "${1:-}" in
+  '') ;;
+  --https) task_https=true ;;
+  *) echo 'Используй: bash setup.sh [--https]' >&2; exit 1 ;;
+esac
 
 # macOS / Linux. Uses the same Compose services and .env as setup.ps1.
 if ! command -v docker >/dev/null 2>&1; then
@@ -55,6 +61,7 @@ for task_attempt in {1..60}; do
       printf '\nГотово: http://localhost:4000\nЛогин сотрудника: admin\n'
       awk '/^ADMIN_PASSWORD=/{sub(/^ADMIN_PASSWORD=/, ""); sub(/\r$/, ""); print "Пароль сотрудника: " $0}' .env
       echo 'Остановка без удаления данных: docker compose stop'
+      if [ "$task_https" = true ]; then bash tools/enable-https.sh; fi
       exit 0
     fi
   fi

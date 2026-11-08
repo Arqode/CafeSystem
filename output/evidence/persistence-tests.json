@@ -1,0 +1,29 @@
+{
+  "testedAt": "2026-11-08T15:27:29.879Z",
+  "base": "http://localhost:4000",
+  "before": {
+    "orders": 135,
+    "demoOrders": 120,
+    "items": 259,
+    "products": 15,
+    "ordersDigest": "949fb100241456711b463a33de905fa2",
+    "itemsDigest": "8d028eb177220c7550991a6b939fe633",
+    "productsDigest": "8f5d923249972688128ef21540f988f8"
+  },
+  "after": {
+    "orders": 135,
+    "demoOrders": 120,
+    "items": 259,
+    "products": 15,
+    "ordersDigest": "949fb100241456711b463a33de905fa2",
+    "itemsDigest": "8d028eb177220c7550991a6b939fe633",
+    "productsDigest": "8f5d923249972688128ef21540f988f8"
+  },
+  "checks": [
+    "Database and app stop/start without removing volumes",
+    "App becomes healthy again",
+    "All order/item/product rows unchanged",
+    "Seed batch does not duplicate demonstration orders"
+  ],
+  "personalDataIncluded": false
+}
