@@ -1,62 +1,189 @@
-import {createRequire} from 'node:module';
-import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
-import assert from 'node:assert/strict';
-const require=createRequire(import.meta.url);
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const env=Object.fromEntries(readFileSync('.env','utf8').split(/\r?\n/).map(l=>[l.slice(0,l.indexOf('=')),l.slice(l.indexOf('=')+1)]));
-mkdirSync('output/evidence',{recursive:true});
-const browser=await chromium.launch({channel:'chrome',headless:true});
-const context=await browser.newContext({viewport:{width:1440,height:1000}});
-const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-const base=process.env.TEST_URL||'http://localhost:4000';
-try{
- await page.goto(base);await page.locator('.product-card').first().waitFor();
- await page.screenshot({path:'output/evidence/A1-1-menu-desktop.png',fullPage:true});
- for(const width of [320,375,768,1440]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`Overflow at ${width}`);}
- await page.setViewportSize({width:375,height:812});await page.screenshot({path:'output/evidence/menu-mobile.png',fullPage:true});
- await page.getByRole('button',{name:'Add Cheeseburger to cart',exact:true}).click();
- await page.getByRole('button',{name:'Add Cola to cart',exact:true}).click();
- await page.getByRole('button',{name:'View Cart',exact:true}).click();
- await page.getByRole('button',{name:'Remove',exact:true}).last().click();
- await page.getByRole('button',{name:'Increase quantity',exact:true}).click();
- await page.reload();await page.getByRole('button',{name:'Decrease quantity',exact:true}).waitFor();
- assert.equal(await page.locator('.qty span').innerText(),'2');
- await page.screenshot({path:'output/evidence/A1-2-cart.png',fullPage:true});
- let checkoutRequests=0;
- page.on('request',r=>{if(r.method()==='POST'&&r.url().endsWith('/api/orders'))checkoutRequests++;});
- await page.getByRole('button',{name:'Place order · Pay at pickup',exact:true}).click();
- await page.getByRole('alert').filter({hasText:'Enter your name'}).waitFor();
- assert.equal(checkoutRequests,0,'Empty name does not submit an order');
- await page.getByLabel('Your name',{exact:false}).fill("Artur O'Neil");
- const orderResponse=page.waitForResponse(r=>r.url().endsWith('/api/orders')&&r.request().method()==='POST');
- for(const width of [320,375,768,1440]) { await page.setViewportSize({width,height:900}); assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`Checkout overflow at ${width}`); }
- await page.screenshot({path:'output/evidence/checkout-pickup-desktop.png',fullPage:true});
- await page.setViewportSize({width:375,height:812});
- await page.screenshot({path:'output/evidence/checkout-pickup-name.png',fullPage:true});
- await page.getByRole('button',{name:'Place order · Pay at pickup',exact:true}).click();
- const placed=await (await orderResponse).json();
- assert.equal(placed.customerName,"Artur O'Neil");
- assert.equal(checkoutRequests,1,'Exactly one order was submitted');
- await page.getByRole('heading',{name:'My orders',exact:true}).waitFor();await page.locator('.badge').first().waitFor();
- await page.screenshot({path:'output/evidence/A1-3-confirmation.png',fullPage:true});
- await page.getByRole('button',{name:'Staff orders',exact:true}).click();
- await page.getByLabel('Username',{exact:true}).fill('admin');await page.getByLabel('Password',{exact:true}).fill(env.ADMIN_PASSWORD);
- await page.getByRole('button',{name:'Sign in',exact:true}).click();
- const placedCard=page.locator('.card').filter({has:page.getByText(`Order #${placed.id}`,{exact:true})});
- await placedCard.getByText("Artur O'Neil",{exact:true}).waitFor();
- await page.reload();
- await placedCard.getByText("Artur O'Neil",{exact:true}).waitFor();
- await placedCard.getByRole('button',{name:'Accept order',exact:true}).waitFor();
- await page.screenshot({path:'output/evidence/A1-4-staff-orders.png',fullPage:false});
- await placedCard.getByRole('button',{name:'Accept order',exact:true}).click();
- await placedCard.getByRole('button',{name:'Mark as ready',exact:true}).waitFor();
- await placedCard.getByRole('button',{name:'Mark as ready',exact:true}).click();
- await page.getByRole('button',{name:'My orders',exact:true}).click();await page.getByText('Ready',{exact:true}).first().waitFor();
- await page.screenshot({path:'output/evidence/A1-5-status.png',fullPage:true});
- await page.getByRole('button',{name:'Manage menu',exact:true}).click();await page.getByRole('button',{name:'Add product',exact:true}).waitFor();
- await page.screenshot({path:'output/evidence/A1-6-manage-menu.png',fullPage:false});
- await page.getByRole('button',{name:'Insights',exact:true}).click();await page.locator('.chart-bars').first().waitFor();
- await page.setViewportSize({width:1440,height:1100});await page.screenshot({path:'output/evidence/C5-insights.png',fullPage:true});
- assert.deepEqual(errors,[]);writeFileSync('output/evidence/browser-tests.json',JSON.stringify({testedAt:new Date().toISOString(),widths:[320,375,768,1440],checks:['no horizontal overflow','menu','cart quantity persists after refresh','required pickup name and no empty submission','pickup name saved and visible to staff','checkout','staff authentication','staff order transitions','customer sees Ready','menu management','three data charts'],errors},null,2));
- console.log('Browser journey passed; desktop/mobile screenshots saved.');
-}finally{await browser.close();}
+import { createRequire } from "node:module";
+import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
+import assert from "node:assert/strict";
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
+import { testEnv as env } from "./test-env.mjs";
+mkdirSync("output/evidence", { recursive: true });
+const browser = await chromium.launch({
+  channel: process.env.BROWSER_CHANNEL || "chrome",
+  headless: true,
+});
+const context = await browser.newContext({
+  viewport: { width: 1440, height: 1000 },
+});
+const page = await context.newPage();
+const errors = [];
+page.on("pageerror", (e) => errors.push(e.message));
+const base = process.env.TEST_URL || "http://localhost:4000";
+try {
+  await page.goto(base);
+  await page.locator(".product-card").first().waitFor();
+  await page.screenshot({
+    path: "output/evidence/A1-1-menu-desktop.png",
+    fullPage: true,
+  });
+  for (const width of [320, 360, 375, 768, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    assert.equal(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+      true,
+      `Overflow at ${width}`,
+    );
+  }
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.screenshot({
+    path: "output/evidence/menu-mobile.png",
+    fullPage: true,
+  });
+  await page
+    .getByRole("button", { name: "Add Cheeseburger to cart", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Add Cola to cart", exact: true })
+    .click();
+  await page.getByRole("button", { name: "View Cart", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Remove", exact: true })
+    .last()
+    .click();
+  await page
+    .getByRole("button", { name: "Increase quantity", exact: true })
+    .click();
+  await page.reload();
+  await page
+    .getByRole("button", { name: "Decrease quantity", exact: true })
+    .waitFor();
+  assert.equal(await page.locator(".qty span").innerText(), "2");
+  await page.screenshot({
+    path: "output/evidence/A1-2-cart.png",
+    fullPage: true,
+  });
+  let checkoutRequests = 0;
+  page.on("request", (r) => {
+    if (r.method() === "POST" && r.url().endsWith("/api/orders"))
+      checkoutRequests++;
+  });
+  await page
+    .getByRole("button", { name: "Place order · Pay at pickup", exact: true })
+    .click();
+  await page
+    .getByRole("alert")
+    .filter({ hasText: "Enter your name" })
+    .waitFor();
+  assert.equal(checkoutRequests, 0, "Empty name does not submit an order");
+  await page.getByLabel("Your name", { exact: false }).fill("Artur O'Neil");
+  const orderResponse = page.waitForResponse(
+    (r) => r.url().endsWith("/api/orders") && r.request().method() === "POST",
+  );
+  for (const width of [320, 360, 375, 768, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    assert.equal(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+      true,
+      `Checkout overflow at ${width}`,
+    );
+  }
+  await page.screenshot({
+    path: "output/evidence/checkout-pickup-desktop.png",
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.screenshot({
+    path: "output/evidence/checkout-pickup-name.png",
+    fullPage: true,
+  });
+  await page
+    .getByRole("button", { name: "Place order · Pay at pickup", exact: true })
+    .click();
+  const placed = await (await orderResponse).json();
+  assert.equal(placed.customerName, "Artur O'Neil");
+  assert.equal(checkoutRequests, 1, "Exactly one order was submitted");
+  await page.getByRole("heading", { name: "My orders", exact: true }).waitFor();
+  await page.locator(".badge").first().waitFor();
+  await page.screenshot({
+    path: "output/evidence/A1-3-confirmation.png",
+    fullPage: true,
+  });
+  await page.getByRole("button", { name: "Staff orders", exact: true }).click();
+  await page.getByLabel("Username", { exact: true }).fill("admin");
+  await page.getByLabel("Password", { exact: true }).fill(env.ADMIN_PASSWORD);
+  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  const placedCard = page
+    .locator(".card")
+    .filter({ has: page.getByText(`Order #${placed.id}`, { exact: true }) });
+  await placedCard.getByText("Artur O'Neil", { exact: true }).waitFor();
+  await page.reload();
+  await placedCard.getByText("Artur O'Neil", { exact: true }).waitFor();
+  await placedCard
+    .getByRole("button", { name: "Accept order", exact: true })
+    .waitFor();
+  await page.screenshot({
+    path: "output/evidence/A1-4-staff-orders.png",
+    fullPage: false,
+  });
+  await placedCard
+    .getByRole("button", { name: "Accept order", exact: true })
+    .click();
+  await placedCard
+    .getByRole("button", { name: "Mark as ready", exact: true })
+    .waitFor();
+  await placedCard
+    .getByRole("button", { name: "Mark as ready", exact: true })
+    .click();
+  await page.getByRole("button", { name: "My orders", exact: true }).click();
+  await page.getByText("Ready", { exact: true }).first().waitFor();
+  await page.screenshot({
+    path: "output/evidence/A1-5-status.png",
+    fullPage: true,
+  });
+  await page.getByRole("button", { name: "Manage menu", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Add product", exact: true })
+    .waitFor();
+  await page.screenshot({
+    path: "output/evidence/A1-6-manage-menu.png",
+    fullPage: false,
+  });
+  await page.getByRole("button", { name: "Insights", exact: true }).click();
+  await page.locator(".chart-bars").first().waitFor();
+  await page.setViewportSize({ width: 1440, height: 1100 });
+  await page.screenshot({
+    path: "output/evidence/C5-insights.png",
+    fullPage: true,
+  });
+  assert.deepEqual(errors, []);
+  writeFileSync(
+    "output/evidence/browser-tests.json",
+    JSON.stringify(
+      {
+        testedAt: new Date().toISOString(),
+        journeyViewport: "360x800",
+        widths: [320, 360, 375, 768, 1440],
+        checks: [
+          "no horizontal overflow",
+          "menu",
+          "cart quantity persists after refresh",
+          "required pickup name and no empty submission",
+          "pickup name saved and visible to staff",
+          "checkout",
+          "staff authentication",
+          "staff order transitions",
+          "customer sees Ready",
+          "menu management",
+          "three data charts",
+        ],
+        errors,
+      },
+      null,
+      2,
+    ),
+  );
+  console.log("Browser journey passed; desktop/mobile screenshots saved.");
+} finally {
+  await browser.close();
+}

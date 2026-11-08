@@ -1,6 +1,6 @@
 {
-  "testedAt": "2026-11-01T14:46:15.847Z",
-  "browser": "156.0.8078.74",
+  "testedAt": "2026-11-08T11:35:00.729Z",
+  "browser": "156.0.8078.80",
   "method": "Chrome DevTools Protocol, cache disabled, Fast 4G conditions; automated equivalent, not a screenshot of the Network panel",
   "source": "https://chromium.googlesource.com/devtools/devtools-frontend/+/HEAD/front_end/core/sdk/NetworkManager.ts",
   "viewport": "375x812 DPR1",
@@ -13,54 +13,54 @@
     {
       "screen": "menu",
       "run": 1,
-      "domContentLoadedMs": 1168,
-      "loadMs": 1168,
-      "interactiveMs": 1608
+      "domContentLoadedMs": 600,
+      "loadMs": 600,
+      "interactiveMs": 1027
     },
     {
       "screen": "menu",
       "run": 2,
-      "domContentLoadedMs": 882,
-      "loadMs": 882,
-      "interactiveMs": 1309
+      "domContentLoadedMs": 580,
+      "loadMs": 580,
+      "interactiveMs": 1000
     },
     {
       "screen": "menu",
       "run": 3,
-      "domContentLoadedMs": 866,
-      "loadMs": 866,
-      "interactiveMs": 1316
+      "domContentLoadedMs": 603,
+      "loadMs": 603,
+      "interactiveMs": 1019
     },
     {
       "screen": "cart",
       "run": 1,
-      "domContentLoadedMs": 862,
-      "loadMs": 862,
-      "interactiveMs": 1171
+      "domContentLoadedMs": 565,
+      "loadMs": 565,
+      "interactiveMs": 922
     },
     {
       "screen": "cart",
       "run": 2,
-      "domContentLoadedMs": 894,
-      "loadMs": 894,
-      "interactiveMs": 1190
+      "domContentLoadedMs": 594,
+      "loadMs": 594,
+      "interactiveMs": 961
     },
     {
       "screen": "cart",
       "run": 3,
-      "domContentLoadedMs": 875,
-      "loadMs": 875,
-      "interactiveMs": 1263
+      "domContentLoadedMs": 575,
+      "loadMs": 575,
+      "interactiveMs": 940
     }
   ],
   "averages": {
     "menu": {
-      "loadMs": 972,
-      "interactiveMs": 1411
+      "loadMs": 594,
+      "interactiveMs": 1015
     },
     "cart": {
-      "loadMs": 877,
-      "interactiveMs": 1208
+      "loadMs": 578,
+      "interactiveMs": 941
     }
   }
 }

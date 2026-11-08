@@ -1,6 +1,6 @@
 {
-  "testedAt": "2026-11-04T05:39:43.703Z",
-  "base": "http://localhost:4000",
+  "testedAt": "2026-11-08T11:45:47.952Z",
+  "base": "http://127.0.0.1:4000",
   "checks": [
     "PostgreSQL is connected",
     "Menu contains at least eight products with prices",
@@ -27,6 +27,8 @@
     "Invalid pickup names do not create database orders",
     "Order is saved with the price calculated by the server",
     "Pickup name supports Unicode and apostrophes and normalizes spaces",
+    "Sequential order number alone cannot reveal another order",
+    "Wrong tracking key cannot reveal an order",
     "Created order is read from the database",
     "Public order lookup does not reveal the pickup name",
     "Staff order list reads the saved pickup name",
@@ -40,7 +42,19 @@
     "Staff can create product",
     "Staff can edit and disable product",
     "Disabled product is hidden from customer menu",
-    "Disabled product cannot be ordered"
+    "Disabled product cannot be ordered",
+    "Invalid identifiers produce a validation error: /api/orders/nope",
+    "Invalid identifiers produce a validation error: /api/orders/-1",
+    "Invalid identifiers produce a validation error: /api/products/9999999999999999999999",
+    "Null JSON body is rejected: /api/orders",
+    "Null JSON body is rejected: /api/products",
+    "Null JSON body is rejected: /api/auth/login",
+    "Null JSON body is rejected: /api/orders/121/status",
+    "Five concurrent checkout retries create exactly one order",
+    "Only the first checkout request creates a record",
+    "Reusing a checkout key for another cart is rejected",
+    "Duplicate product lines cannot bypass the quantity limit",
+    "Fractional KZT prices are rejected"
   ],
-  "syntheticVerificationOrder": 124
+  "syntheticVerificationOrder": 121
 }

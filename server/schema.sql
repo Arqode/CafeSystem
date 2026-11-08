@@ -38,6 +38,10 @@ WHERE NOT EXISTS (SELECT 1 FROM products);
 
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS is_demo BOOLEAN NOT NULL DEFAULT FALSE;
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS customer_name TEXT NOT NULL DEFAULT '';
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS tracking_hash TEXT;
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS request_key TEXT;
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS request_hash TEXT;
+CREATE UNIQUE INDEX IF NOT EXISTS orders_request_key_idx ON orders(request_key) WHERE request_key IS NOT NULL;
 -- Label historical synthetic orders honestly; real older orders keep an empty name.
 UPDATE orders SET customer_name = 'Demo guest ' || id
 WHERE is_demo AND customer_name = '';

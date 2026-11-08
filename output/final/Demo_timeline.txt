@@ -1,0 +1,14 @@
+0s: Customer: browse menu, prices and categories.
+5s: Search the menu.
+9s: Add a product and see cart feedback.
+14s: Review quantity and total. Prices come from the server.
+19s: Enter a pickup name. Payment happens at the cafe.
+23s: The order is saved in PostgreSQL and has a New status.
+29s: Staff receive the same order, including its pickup name.
+33s: Staff accept the order. Its status becomes Preparing.
+38s: The customer sees Ready from the shared database.
+43s: Staff can edit prices and disable unavailable products.
+48s: Insights: product popularity, daily revenue and hourly orders. Data includes synthetic records.
+54s: The wait estimate is a software simulation. No physical sensor is connected.
+
+Silent recording of the actual local database-backed application. Automated demonstration, not a human usability session.

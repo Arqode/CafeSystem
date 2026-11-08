@@ -1,5 +1,9 @@
 # DashFood — Project Stage 2 (Endterm)
 
+> Historical Stage 2 report. Its three-success-criteria interpretation is corrected
+> in FINAL_TESTING.md using annotated Stage 1 p5. For the current system, evidence
+> and final submission use FINAL_REPORT.html and output/final, not this older report.
+
 **Group:** [enter group] · **Team:** [enter registered team name]  
 **Members:** Artur — UI Designer; Adiyat — Analyst / Developer; Erdaulet — Researcher / Presenter.  
 **Version:** 31 October 2026. **Submission status:** draft pending external user testing and team verification.

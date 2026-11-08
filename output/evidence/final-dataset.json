@@ -1,0 +1,151 @@
+{
+  "capturedAt": "2026-11-08T11:46:10.864Z",
+  "count": 123,
+  "demo_count": 120,
+  "revenue": 620900,
+  "average": 5593.693693693694,
+  "queue": 1,
+  "popular": [
+    {
+      "label": "Cheeseburger",
+      "value": 45
+    },
+    {
+      "label": "Americano",
+      "value": 43
+    },
+    {
+      "label": "Cheesecake",
+      "value": 42
+    },
+    {
+      "label": "Lemonade",
+      "value": 42
+    },
+    {
+      "label": "Double Burger",
+      "value": 42
+    },
+    {
+      "label": "Brownie",
+      "value": 41
+    },
+    {
+      "label": "Chicken Burger",
+      "value": 41
+    },
+    {
+      "label": "Cola",
+      "value": 40
+    }
+  ],
+  "daily": [
+    {
+      "label": "2026-10-16",
+      "value": 59900
+    },
+    {
+      "label": "2026-10-17",
+      "value": 39300
+    },
+    {
+      "label": "2026-10-18",
+      "value": 55900
+    },
+    {
+      "label": "2026-10-19",
+      "value": 42700
+    },
+    {
+      "label": "2026-10-20",
+      "value": 56600
+    },
+    {
+      "label": "2026-10-21",
+      "value": 33800
+    },
+    {
+      "label": "2026-10-22",
+      "value": 57000
+    },
+    {
+      "label": "2026-10-23",
+      "value": 35400
+    },
+    {
+      "label": "2026-10-24",
+      "value": 45200
+    },
+    {
+      "label": "2026-10-25",
+      "value": 30400
+    },
+    {
+      "label": "2026-10-26",
+      "value": 46400
+    },
+    {
+      "label": "2026-10-27",
+      "value": 30700
+    },
+    {
+      "label": "2026-10-28",
+      "value": 44300
+    },
+    {
+      "label": "2026-11-08",
+      "value": 5000
+    }
+  ],
+  "hours": [
+    {
+      "label": "09:00",
+      "value": 10
+    },
+    {
+      "label": "10:00",
+      "value": 10
+    },
+    {
+      "label": "11:00",
+      "value": 10
+    },
+    {
+      "label": "12:00",
+      "value": 10
+    },
+    {
+      "label": "13:00",
+      "value": 10
+    },
+    {
+      "label": "14:00",
+      "value": 10
+    },
+    {
+      "label": "15:00",
+      "value": 10
+    },
+    {
+      "label": "16:00",
+      "value": 13
+    },
+    {
+      "label": "17:00",
+      "value": 10
+    },
+    {
+      "label": "18:00",
+      "value": 10
+    },
+    {
+      "label": "19:00",
+      "value": 10
+    },
+    {
+      "label": "20:00",
+      "value": 10
+    }
+  ],
+  "wait": 8
+}

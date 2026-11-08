@@ -5,3 +5,5 @@ dist
 *.log
 __pycache__/
 /comparison/server-pids.json
+/.local/
+/.work/

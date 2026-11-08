@@ -1,11 +1,16 @@
 {
-  "name": "dashfood", "private": true, "version": "2.0.0",
+  "name": "dashfood",
+  "private": true,
+  "version": "2.0.0",
   "scripts": {
-    "setup": "npm --prefix web ci && npm --prefix server ci",
+    "setup": "npm --prefix web ci && npm --prefix server ci && npm --prefix tools ci",
     "dev": "node tools/dev.mjs",
     "build": "npm --prefix web run build && npm --prefix server run build",
     "start": "npm --prefix server start",
     "seed": "npm --prefix server run seed",
-    "test": "node tools/test-api.mjs"
+    "test": "node tools/test-api.mjs",
+    "test:browser": "node tools/test-browser.mjs",
+    "test:performance": "node tools/measure-performance.mjs",
+    "review": "npm run build && node tools/review-local.mjs"
   }
 }
