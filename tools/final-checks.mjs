@@ -106,8 +106,15 @@ try {
   await page.locator(".badge").first().waitFor();
   await scan("Staff orders 360px");
   await page.getByRole("button", { name: "Manage menu", exact: true }).click();
-  await page.getByRole("button", { name: "Edit", exact: true }).last().click();
+  const editTrigger = page.getByRole("button", { name: "Edit", exact: true }).last();
+  const originalEditButton = await editTrigger.elementHandle();
+  await editTrigger.click();
   await page.getByLabel("Name", { exact: true }).waitFor();
+  await page.waitForFunction(
+    (element) => element === document.activeElement,
+    await page.getByLabel("Name", { exact: true }).elementHandle(),
+    { timeout: 5000 },
+  );
   assert.equal(
     await page
       .getByLabel("Name", { exact: true })
@@ -120,9 +127,14 @@ try {
   await scan("Product editor 360px");
   await page.screenshot({ path: "output/evidence/final-editor-focus.png" });
   await page.getByRole("button", { name: "Cancel", exact: true }).click();
+  await page.waitForFunction(
+    (element) => element === document.activeElement,
+    originalEditButton,
+    { timeout: 5000 },
+  );
   assert.equal(
-    await page.evaluate(() => document.activeElement?.textContent),
-    "Edit",
+    await editTrigger.evaluate((element) => element === document.activeElement),
+    true,
   );
   pass("F03: Cancel returns keyboard focus to the originating Edit button");
   await page.getByRole("button", { name: "Insights", exact: true }).click();
